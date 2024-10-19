@@ -80,9 +80,9 @@ function Booking() {
                         {/* <th>id</th> */}
                         <th className={cx("nameTH")} >name user</th>
                         <th className={cx("roomTH")}>room</th>
-                        {/* <th className={cx("dateTH")}>check in</th> */}
-                        {/* <th className={cx("dateTH")}>check out</th> */}
                         <th className={cx("dateTH")}>order date</th> 
+                        <th className={cx("dateTH")}>check in</th>
+                        <th className={cx("dateTH")}>check out</th>
                         <th>Trạng thái</th>
                         <th>thành tiền</th>
                         <th style={{textAlign:"center"}}>Thao tác</th>
@@ -97,9 +97,9 @@ function Booking() {
                           {/* <td>{text._id}</td> */}
                           <td>{text.nameuserorder}</td>
                           <td>{text.room}</td>
-                          {/* <td>{text.fromdate}</td> */}
-                          {/* <td>{text.todate}</td> */}
                           <td>{text.orderdate}</td>
+                          <td>{text.fromdate}</td>
+                          <td>{text.todate}</td>
                           <td style={{width: "270px"}}>{
                             (
                               text.status==="cancelled") ? (

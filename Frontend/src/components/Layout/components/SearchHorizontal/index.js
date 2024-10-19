@@ -13,84 +13,83 @@ function SearchHorizontal(props) {
     const rangeRef = useRef()
     const bubbleRef = useRef()
     const [duplicaterooms, setDuplicaterooms] = useState([]);
-    const {renderSingleInputDateRangePicker, date} = SingleInputDateRangePicker();
-    const {data} = useFetch('/api/rooms/getallrooms');
+    const { renderSingleInputDateRangePicker, date } = SingleInputDateRangePicker();
+    const { data } = useFetch('/api/rooms/getallrooms');
     const [quanlityPeople, setQuanlityPeople] = useState('')
     const [price, setPrice] = useState(200000)
     const [branch, setBranch] = useState([])
     const [branchSelected, setBranchSelected] = useState(0)
 
-    useEffect(()=>{
-        const fetchDataBranch = async() => {
-          try {
-             const newbranch = (await axios.get('/api/branch/getallbranchs')).data;
-            newbranch.unshift({branch:0})
-             setBranch(newbranch);
-          } catch (error) {
-           console.log(error);
-          } 
+    useEffect(() => {
+        const fetchDataBranch = async () => {
+            try {
+                const newbranch = (await axios.get('/api/branch/getallbranchs')).data;
+                newbranch.unshift({ branch: 0 })
+                setBranch(newbranch);
+            } catch (error) {
+                console.log(error);
+            }
         }
         fetchDataBranch();
-      },[]);
-    useEffect(()=> {
+    }, []);
+    useEffect(() => {
         setDuplicaterooms(data);
-    },[data]);
-    
+    }, [data]);
+
     const convertDate = (date, separator) => {
         var d = date.split(separator);
-        var tam = new Date(d[2], parseInt(d[1])-1, d[0]);
+        var tam = new Date(d[2], parseInt(d[1]) - 1, d[0]);
         return tam;
-    }   
+    }
 
     const searchHandle = () => {
-        const  [startDate,endDate] = date;
+        const [startDate, endDate] = date;
         // convert date to string
+
         const fromdate = startDate.format('MM-DD-YYYY');
-        const todate = endDate?endDate.format('MM-DD-YYYY'):null;
+        const todate = endDate ? endDate.format('MM-DD-YYYY') : null;
         // convert string to date
-        var from = convertDate(fromdate,"-");  // date input search
-        var to = convertDate(todate,"-");   // date input search
+        var from = convertDate(fromdate, "-");  // date input search
+        var to = convertDate(todate, "-");   // date input search
         // ----------------------
         var filteredRooms = []
-        for (const room of duplicaterooms){
+        for (const room of duplicaterooms) {
             var availability = false
             // search for date from and to
             if (room.currentBooking.length > 0) {
-                for (const booking of room.currentBooking){
-                    const fromDateOfBooked = convertDate(booking.fromdate,"-");
-                    const toDateOfBooked = convertDate(booking.todate,"-");
+                for (const booking of room.currentBooking) {
+                    const fromDateOfBooked = convertDate(booking.fromdate, "-");
+                    const toDateOfBooked = convertDate(booking.todate, "-");
                     if (!((from > fromDateOfBooked) && (from < toDateOfBooked))
-                        && !((to > fromDateOfBooked) && (to < toDateOfBooked)))
-                        {
-                            if ((from !== fromDateOfBooked) 
-                                && (from !== toDateOfBooked) 
-                                && (to !== fromDateOfBooked)
-                                && (to !== toDateOfBooked))
-                                {availability = true}
-                        }
+                        && !((to > fromDateOfBooked) && (to < toDateOfBooked))) {
+                        if ((from !== fromDateOfBooked)
+                            && (from !== toDateOfBooked)
+                            && (to !== fromDateOfBooked)
+                            && (to !== toDateOfBooked)) { availability = true }
+                    }
                 }
             }
             if (branchSelected === 0) {
-                if (room.price[1] <= price 
+                if (room.price[1] <= price
                     && room.maxcount >= quanlityPeople
-                    && (availability || room.currentBooking.length===0)
-                    ) {
-                        console.log(room);
-                        filteredRooms.push(room);
+                    && (availability || room.currentBooking.length === 0)
+                ) {
+                    console.log(room);
+                    filteredRooms.push(room);
                 }
             } else {
-                if (room.price[1] <= price 
-                    && room.branch === branchSelected 
+                if (room.price[1] <= price
+                    && room.branch === branchSelected
                     && room.maxcount >= quanlityPeople
-                    && (availability || room.currentBooking.length===0)
-                    ) {
-                        filteredRooms.push(room);
+                    && (availability || room.currentBooking.length === 0)
+                ) {
+                    filteredRooms.push(room);
                 }
             }
         }
         setQuanlityPeople('')
         // send data
-        const dataSearch = {fromdate, todate, filteredRooms}
+        const dataSearch = { fromdate, todate, filteredRooms }
         props.sendDataDate(dataSearch);
     }
     // format currency
@@ -100,16 +99,16 @@ function SearchHorizontal(props) {
         // maximumFractionDigits: 3,
     });
     const setBubble = (range, bubble) => {
-        if (range && bubble){
+        if (range && bubble) {
             var val = range.value ? (parseInt(range.value, 10)) : 200000
             const min = range.min ? range.min : 200000
             const max = range.max ? range.max : 2000000
             const newVal = Number(((val - min) * 100) / (max - min));
-            bubble.innerHTML  = formatter.format(val);
+            bubble.innerHTML = formatter.format(val);
             bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.2}px))`;
         }
-    }  
-      
+    }
+
     return (
         <div className={cx('wrapper')} >
             <div className={cx('inner', 'flex')}>
@@ -122,36 +121,36 @@ function SearchHorizontal(props) {
                     <div className={cx('brach-Input')}>
                         <label htmlFor="brach">Lựa chọn chi nhánh</label>
                         <div className={cx('input', 'flex')}>
-                            <select 
-                                name="brach" 
-                                id="input" 
+                            <select
+                                name="brach"
+                                id="input"
                                 required="required"
                                 // value={branchSelected}
-                                onChange={(e)=>{setBranchSelected(parseInt(e.target.value,10))}}
+                                onChange={(e) => { setBranchSelected(parseInt(e.target.value, 10)) }}
                             >
-                            {branch.map((val,index) => {
-                             if (val.branch===0) {
-                               return (
-                                    <option key={index} value={val.branch}>Tất cả chi nhánh</option>
-                                );
-                             } else {
-                                return (
-                                    <option key={index} value={val.branch}>Chi nhánh {val.branch}</option>
-                                );
-                             }  
-                            })}
+                                {branch.map((val, index) => {
+                                    if (val.branch === 0) {
+                                        return (
+                                            <option key={index} value={val.branch}>Tất cả chi nhánh</option>
+                                        );
+                                    } else {
+                                        return (
+                                            <option key={index} value={val.branch}>Chi nhánh {val.branch}</option>
+                                        );
+                                    }
+                                })}
                             </select>
                         </div>
                     </div>
                     {/* date */}
-                        <div className={cx('date-Input')}>
-                            <label >Lựa chọn ngày đến</label>
-                            <div className={cx('dateRangePicker', 'flex')}>
-                                {renderSingleInputDateRangePicker}
-                            </div>
+                    <div className={cx('date-Input')}>
+                        <label >Lựa chọn ngày đến</label>
+                        <div className={cx('dateRangePicker', 'flex')}>
+                            {renderSingleInputDateRangePicker}
                         </div>
+                    </div>
                     {/* quanlity */}
-                    <div className={cx('quanlity-Input')}>
+                    {/* <div className={cx('quanlity-Input')}>
                         <label htmlFor="quanlity">Lựa chọn số lượng người ở</label>
                         <div className={cx('input', 'flex')}>
                             <input 
@@ -161,23 +160,43 @@ function SearchHorizontal(props) {
                                 onChange={(e) => {setQuanlityPeople(parseInt(e.target.value))}}
                             />
                         </div>
+                    </div> */}
+                    <div className={cx('quanlity-Input')}>
+                        <label htmlFor="quanlity">Lựa chọn số lượng người ở</label>
+                        <div className={cx('input', 'flex')}>
+                            <input
+                                type="number"
+                                placeholder="Nhập số lượng người ở"
+                                value={quanlityPeople}
+                                onChange={(e) => {
+                                    const value = parseInt(e.target.value);
+                                    if (value > 0) {
+                                        setQuanlityPeople(value);
+                                    } else {
+                                        // Xử lý nếu giá trị nhập vào không hợp lệ
+                                        alert("Số lượng người ở phải lớn hơn 0");
+                                    }
+                                }}
+                            />
+                        </div>
                     </div>
+
                     {/* price */}
                     <div className={cx('price-Input')}>
                         <div className={cx('label-total', 'flex')}>
                             <label htmlFor="quanlity">Giá Max: 2.000.000(VND)</label>
                         </div>
                         <div className={cx('input', 'flex')}>
-                            <input 
+                            <input
                                 ref={rangeRef}
                                 className={cx('range')}
-                                type="range" 
-                                max="2000000" 
-                                min="200000" 
+                                type="range"
+                                max="2000000"
+                                min="200000"
                                 step="50000"
                                 value={price}
-                                onInput={setBubble(rangeRef.current,bubbleRef.current)}
-                                onChange={(e)=>{setPrice(parseInt(e.target.value,10))}}
+                                onInput={setBubble(rangeRef.current, bubbleRef.current)}
+                                onChange={(e) => { setPrice(parseInt(e.target.value, 10)) }}
                             />
                             <output ref={bubbleRef} className={cx("bubble")}></output>
                         </div>
@@ -192,47 +211,48 @@ function SearchHorizontal(props) {
                     >
                         Tìm kiếm
                     </Button>
+
                 </div>
             </div>
             <div className={cx("descBranch")}>
                 <span className={cx("flex")}>
-                    <h4 
+                    <h4
                         style={{
-                            color:"#e8eaf6"
-                        }}    
+                            color: "#e8eaf6"
+                        }}
                     >Chi nhánh 1 :</h4>
                     <h4
                         style={{
-                            paddingLeft:"1.5rem",
-                            color:"#1a237e"
+                            paddingLeft: "1.5rem",
+                            color: "#1a237e"
                         }}
-                    >131 Hoang Hoa Tham, Phuong 10, Tp.Da Lat, Đà Lạt, Đà Lạt, Việt Nam</h4>
+                    >số 131, đường Hoàng Hoa Thám, Phường 10, Thành phố Đà Lạt, tỉnh Lâm Đồng</h4>
                 </span>
                 <span className={cx("flex")}>
-                    <h4 
+                    <h4
                         style={{
-                            color:"#e8eaf6"
-                        }}    
+                            color: "#e8eaf6"
+                        }}
                     >Chi nhánh 2 :</h4>
                     <h4
                         style={{
-                            paddingLeft:"1.5rem",
-                            color:"#1a237e"
+                            paddingLeft: "1.5rem",
+                            color: "#1a237e"
                         }}
-                    >53-55 BA THANG HAI, Trung tâm Đà Lạt, Đà Lạt, Việt Nam</h4>
+                    >số 53-55 Ba tháng hai , Trung tâm Thành phố Đà Lạt, tỉnh Lâm Đồng</h4>
                 </span>
                 <span className={cx("flex")}>
-                    <h4 
+                    <h4
                         style={{
-                            color:"#e8eaf6"
-                        }}    
+                            color: "#e8eaf6"
+                        }}
                     >Chi nhánh 3 :</h4>
                     <h4
                         style={{
-                            paddingLeft:"1.5rem",
-                            color:"#1a237e"
+                            paddingLeft: "1.5rem",
+                            color: "#1a237e"
                         }}
-                    >5-7A Tran Phu, w.3, Dalat, Lam Dong, Vietnam</h4>
+                    >số 5-7A, đường Trần Phú, Phường 3, thành phố Đà Lạc, tỉnh Lâm Đồng</h4>
                 </span>
             </div>
         </div>

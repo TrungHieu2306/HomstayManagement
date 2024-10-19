@@ -58,9 +58,11 @@ function User() {
                     <thead>
                       <tr>
                         <th>stt</th>
-                        <th>id</th>
+                        {/* <th>id</th> */}
                         <th>name</th>
                         <th>email</th>
+                        <th>phone</th>
+                        <th>address</th>
                         <th>is admin</th>
                         <th>action</th>
                       </tr>
@@ -70,9 +72,11 @@ function User() {
                         user.map((text,index)=>(
                         <tr key={index}>
                           <td>{index+1}</td>
-                          <td>{text._id}</td>
+                          {/* <td>{text._id}</td> */}
                           <td>{text.name}</td>
                           <td>{text.email}</td>
+                          <td>{text.phone}</td>
+                          <td>{text.address}</td>
                           <td>{text.isAdmin ? 'YES' : 'NO'}</td>
                           <td style={{textAlign:"center"}}><MdDelete onClick={()=>{deleteUserHandle(text._id)}} className={cx("iconDelete")}></MdDelete></td>
                         </tr>))

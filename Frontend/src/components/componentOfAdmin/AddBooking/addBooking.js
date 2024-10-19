@@ -257,7 +257,7 @@ function AddBooking(props) {
                       </div>
                   </div>
                 {/* 3. Room */}
-                   <div className={cx('form-group')}>
+                   {/* <div className={cx('form-group')}>
                       <label htmlFor="room" className={cx('form-label')}>Phòng</label>
                       <div className={cx('input')}>
                           <select 
@@ -275,7 +275,7 @@ function AddBooking(props) {
                               }
                           </select>
                       </div>
-                  </div>
+                  </div> */}
                 {/* 4. hình thức thuê */}
                   <div className={cx('form-group')}>
                       <label htmlFor="typeBooking" className={cx('form-label')}>Hình thức</label>
@@ -295,7 +295,7 @@ function AddBooking(props) {
                   </div>
                 {/* 5. thời gian nhận phòng*/}
                   <div  className={cx('form-group')}>
-                    <label className={cx('form-label')}>Nhận phòng</label>
+                    <label className={cx('form-label')}>Ngày nhận phòng</label>
                       {
                         (typeBooking==="day" || typeBooking==="tonight") ?(
                             <>
@@ -328,7 +328,7 @@ function AddBooking(props) {
                   </div>
                 {/* 6. thời gian trả phòng */}
                   <div  className={cx('form-group')}>
-                    <label className={cx('form-label')}>Trả phòng</label>
+                    <label className={cx('form-label')}>Ngày trả phòng</label>
                     {
                         (typeBooking==="day" || typeBooking==="tonight") ?(
                             <>

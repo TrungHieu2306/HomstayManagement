@@ -81,7 +81,7 @@ function Service() {
                                 <option value="mong-co">Trang phục Mông Cổ</option>
                                 <option value="kimono">Kimono</option>
                                 <option value="hanbok">Hanbok</option>
-                                <!-- Thêm các loại trang phục khác -->
+                               
                             </select>
                             <label for="don-gia-trang-phuc" id="ten">Đơn giá:</label>
                             <input type="text" id="don-gia-trang-phuc" name="don-gia-trang-phuc" readonly/>

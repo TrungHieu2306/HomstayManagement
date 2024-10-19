@@ -29,7 +29,7 @@ function Footer() {
                             Liên Hệ
                             <div className={cx('phone')}>
                                 Số điện thoại
-                                <p className={cx('infoContact-content')}>0392 006 743</p>
+                                <p className={cx('infoContact-content')}>035 351 4931</p>
                             </div>
                             <div className={cx('address')}>
                                 Địa chỉ
@@ -40,12 +40,12 @@ function Footer() {
                             <div className={cx('time')}>
                                 Thời gian nhận & trả phòng
                                 <p className={cx('infoContact-content')}>
-                                    Từ 14:00 - Trước 24:00 giờ
+                                Nhận phòng từ 14:00 và trả phòng từ 12:00 trưa
                                 </p>
                             </div>
                             <div className={cx('price')}>
                                 Mức giá
-                                <p className={cx('infoContact-content')}>giá phòng từ 576859 VND</p>
+                                <p className={cx('infoContact-content')}>Giá phòng từ 399.000 VND</p>
                             </div>
                         </div>
                         <div className={cx('infoAbout')}>
@@ -57,7 +57,7 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className={cx('copyRight')}>Copyright © 2023 DHouse DaLat Homestay</div>
+                <div className={cx('copyRight')}>Copyright © 2024 DHouse DaLat Homestay</div>
             </div>
             <Marquee className={cx('marquee')}>
                 DHouse Dalat lựa chọn hàng đầu trong việc đặt phòng Homestay tại Đà Lạt.

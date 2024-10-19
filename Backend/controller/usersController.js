@@ -15,6 +15,7 @@ const usersController = {
             return res.status(400).json({message:error});
         }
     },
+
     login: async(req,res) => {
         const {email,psw} = req.body;
         try {

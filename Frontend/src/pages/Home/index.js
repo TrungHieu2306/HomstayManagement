@@ -30,7 +30,7 @@ const steps = [
         được những dịch vụ mà Dhouse Homestay cung cấp bạn cần có 1 tài khoản để đăng nhập 
         vào hệ thống.`,
     },
-    {
+    {   
       label: 'Tìm kiếm và lựa chọn ngày phù hợp',
       description:
         `Tìm kiếm bằng cách chọn chi nhánh, thời gian đến, thời gian đi, sau đó chọn số lượng

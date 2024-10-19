@@ -33,7 +33,7 @@ function Contact() {
                                     id="fullName"
                                     name="fullName"
                                     type="text"
-                                    placeholder="VD: Gia Huy"
+                                    placeholder="VD: Nguyen Trung Hieu"
                                     className={cx('form-control')}
                                 ></input>
                                 <span className={cx('form-message')}></span>
@@ -47,7 +47,7 @@ function Contact() {
                                     id="phone"
                                     name="phone"
                                     type="tel"
-                                    placeholder="VD: 0123456789"
+                                    placeholder="VD: 0353514931"
                                     className={cx('form-control')}
                                 ></input>
                                 <span className={cx('form-message')}></span>
@@ -61,7 +61,7 @@ function Contact() {
                                     id="email"
                                     name="email"
                                     type="text"
-                                    placeholder="VD: huyb2012094@student.ctu.edu.vn"
+                                    placeholder="VD: hieub2005672@student.ctu.edu.vn"
                                     className={cx('form-control')}
                                 ></input>
                                 <span className={cx('form-message')}></span>

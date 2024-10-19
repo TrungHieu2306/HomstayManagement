@@ -84,7 +84,7 @@ function Login() {
                                         type="text"
                                         value={email}
                                         onChange={(e) => {setEmail(e.target.value)}}
-                                        placeholder="VD :huyb2012094@student.ctu.edu.vn"
+                                        placeholder="Ví dụ: hieub2005672@student.ctu.edu.vn"
                                         className={cx('form-control')}
                                     ></input>
                                     <span className={cx('form-message')}></span>
@@ -101,7 +101,7 @@ function Login() {
                                         type="password"
                                         value = {psw}
                                         onChange={(e) => {setPsw(e.target.value)}}
-                                        placeholder="VD 123456789"
+                                        placeholder="Ví dụ: 123456"
                                         className={cx('form-control')}
                                     ></input>
                                     <span className={cx('form-message')}></span>
@@ -130,3 +130,6 @@ function Login() {
 }
 
 export default Login;
+
+
+

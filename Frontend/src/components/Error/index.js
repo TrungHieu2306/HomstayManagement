@@ -1,7 +1,7 @@
 import classNames from "classnames/bind";
 import styles from './Error.module.scss'
 import {MdOutlineError} from 'react-icons/md';
-// import BsCheckLg from 'react-icons/bs';
+
 const cx = classNames.bind(styles);
 function Error({message}) {
     return ( 

@@ -55,7 +55,7 @@ function SearchVertical( props ) {
             <div className={cx('search-Input')}>
                 <input 
                     type="text" 
-                    placeholder="Tìm kiếm"
+                    placeholder="Tìm kiếm theo tên"
                     value={search}
                     onChange={(e)=>{setSearch(e.target.value)}}
                 />

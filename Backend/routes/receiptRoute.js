@@ -8,3 +8,5 @@ router.get('/getallreceipt',recepitsController.getAllReceips);
 router.delete('/deletereceiptbyid/:id',recepitsController.deleteReceipt);
 router.put('/updatereceipt/:id',recepitsController.updateReceipt)
 module.exports = router;
+
+

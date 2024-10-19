@@ -1,63 +1,85 @@
-.wrapper{
-
+.wrapper {
+    h2 {
+        text-align: center;
+        padding: 12px 0 2px 0;
+        color: var(--sub);
+        background-color: #f4fbff;
+        border-radius: 24px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
 }
-.inner{
+
+.inner {
     padding: 3rem;
     // min-height: 400px;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.cart{
+
+.cart {
     margin-bottom: 3rem;
     background-color: #f4fbff;
-    padding : 1.3rem;
+    padding: 1.3rem;
     // height:170px;
     width: 49%;
     border-radius: 24px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
-.bodyCart{
-    padding-left: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.awaitConfirm{
+.bodyCart {
+    padding-left: 1.5rem;
+    display: flex;
+    margin-bottom: 30px;
+    .bodyCart2{
+        margin-left: 40px;
+    }
+}
+
+.awaitConfirm {
     margin-left: 1rem;
     // border: 1px solid #11dc33a5;
     color: green;
     // background-color: rgba(87, 65, 5, 0.403);
-    background-color:rgba(0,128,0,0.2);
+    background-color: rgba(0, 128, 0, 0.2);
     padding: .4rem;
     // width: 110px;
 }
-.cancelled{
+
+.cancelled {
     margin-left: 1rem;
     // border: 1px solid #ed683ca4;
     // color: #ed683c;
     color: crimson;
-    
-    background-color: rgba(255,0,0,0.2) ;
+
+    background-color: rgba(255, 0, 0, 0.2);
     // width: 70px;
     padding: .4rem;
 }
-.btnBookingCart{
+
+.btnBookingCart {
     // height: 10%;
     // margin-top: .7rem;
     float: right;
 }
-.btn{
+
+.btn {
     padding: 1rem;
 }
-.btncancel{
-    &:hover{
+
+.btncancel {
+    &:hover {
         background-color: #ffb8a184;
     }
 }
-.infoErorr{
+
+.infoErorr {
     padding: 0 0 3rem 0;
     align-items: center;
     justify-content: center;
     color: #ef4e4e;
-    h3{
+
+    h3 {
         padding-left: 1rem;
-        color:#ef4e4e;
+        color: #ef4e4e;
     }
 }

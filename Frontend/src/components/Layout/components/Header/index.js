@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 import Button from 'src/components/Button';
-import { FiLogOut,FiMenu } from 'react-icons/fi';
+import { FiLogOut, FiMenu } from 'react-icons/fi';
 import { MdOutlineListAlt } from 'react-icons/md';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import { AiOutlineUser } from 'react-icons/ai';
@@ -15,16 +15,17 @@ import Badge from '@mui/material/Badge';
 // ------
 import { useRef, useState } from 'react';
 import useFetch from 'src/Hook/useFetch';
+
 const cx = classNames.bind(styles); //return function cx
+
 function Header() {
-    // const user = JSON.parse(localStorage.getItem('currentUser'))
-    const user = JSON.parse(localStorage.getItem('currentUser'))
-    
-    const {data,loading} = useFetch(`/api/booking/getbookingsbyuserid/${user ? user._id : 0}`)
+    const user = JSON.parse(localStorage.getItem('currentUser')) //Lấy thông tin người dùng hiện tại được lưu trong localStorage. User là một đối tượng chứa thông tin của người dùng hiện tại
+
+    const { data, loading } = useFetch(`/api/booking/getbookingsbyuserid/${user ? user._id : 0}`) //gọi API để lấy thông tin của người dùng
     // dropdown menu
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
-    
+
     const handleClickUser = (e) => {
         setAnchorEl(e.currentTarget);
     }
@@ -34,7 +35,7 @@ function Header() {
     const logoutHandle = () => {
         setAnchorEl(null);
         localStorage.removeItem('currentUser');
-        window.location.href='/login';
+        window.location.href = '/login';
     }
     // 
     // responsive
@@ -43,21 +44,17 @@ function Header() {
         setShowTab(!showTab)
         console.log(showTab);
     }
- 
-    return (
 
+    return (
         <header className={cx('wrapper')}>
             <div className={cx('logo')}>
                 <Link to="/">
                     <img src="/logoPrimary.png" alt="logoHomestay" />
                 </Link>
             </div>
-            <div 
-                className={cx('inner')}
-            >
-                <div 
-                    className={cx('tab',`${showTab && 'active'}`)}
-                >
+            <div className={cx('inner')}>
+                <div className={cx('tab', `${showTab && 'active'}`)}>
+                    {/* Nếu giá trị showTab là true, lớp active sẽ được thêm vào, nếu không, nó sẽ bị bỏ qua.  */}
                     <Link to="/Room">
                         <div className={cx('tab-item')}>Phòng</div>
                     </Link>
@@ -73,9 +70,10 @@ function Header() {
                 </div>
                 {/* checked login */}
                 <div className={cx('login-register')}>
-                    {user ? (
+                    {user ? ( // nếu người dùng đã đăng nhập, có biến user -> hiện menu, nếu người dùng chưa đăng nhập -> hiện nút đăng nhập
+                        // đoạn mã sẽ thực thi vì user đã đăng nhập
                         <div className={cx('header-after-login')}>
-                            <div className={cx('userLogin')}>         
+                            <div className={cx('userLogin')}>
                                 <ButtonMenu
                                     id="basic-button"
                                     className={cx('nameUser')}
@@ -86,15 +84,15 @@ function Header() {
                                 >
                                     {(user.avatar) ? (
 
-                                        <Badge
+                                        <Badge // badge hiển thị tráng thái online
                                             anchorOrigin={{
                                                 vertical: 'bottom',
                                                 horizontal: 'left',
                                             }}
                                             color="success" variant="dot">
-                                            <img src={`http://localhost:5000/Images/`+user.avatar} className={cx('user-avatar')} alt="img-avatar"></img>
+                                            <img src={`http://localhost:5000/Images/` + user.avatar} className={cx('user-avatar')} alt="img-avatar"></img>
                                         </Badge>
-                                    ): (
+                                    ) : (
                                         <Image src="" className={cx('user-avatar')} alt="img-avatar" />
                                     )}
                                     {user.name}
@@ -107,7 +105,7 @@ function Header() {
                                     open={open}
                                     onClose={handleClose}
                                     MenuListProps={{
-                                    'aria-labelledby': 'basic-button',
+                                        'aria-labelledby': 'basic-button',
                                     }}
                                 >
                                     <Link to='/Profile'>
@@ -117,38 +115,38 @@ function Header() {
                                         </MenuItem>
                                     </Link>
                                     <Link to='/ListBooked'>
-                                    <MenuItem onClick={handleClose} className={cx('menuItem')}>
-                                        {
-                                            data.length>0 ? (
-                                                <Badge badgeContent={data.length} color="warning">
-                                                    <div 
+                                        <MenuItem onClick={handleClose} className={cx('menuItem')}>
+                                            {
+                                                data.length > 0 ? (
+                                                    <Badge badgeContent={data.length} color="warning">
+                                                        <div
+                                                            className={cx("flex")}
+                                                            style={{
+                                                                justifyContent: "center",
+                                                                alignItems: "center",
+                                                                // padding: "1rem 0",
+                                                            }}
+                                                        >
+                                                            <MdOutlineListAlt className={cx('icon')}></MdOutlineListAlt>
+                                                            <p>Danh sách phòng đã đặt</p>
+                                                        </div>
+                                                    </Badge>
+                                                ) : (
+                                                    <div
                                                         className={cx("flex")}
                                                         style={{
                                                             justifyContent: "center",
-                                                            alignItems : "center",
+                                                            alignItems: "center",
                                                             // padding: "1rem 0",
                                                         }}
                                                     >
                                                         <MdOutlineListAlt className={cx('icon')}></MdOutlineListAlt>
                                                         <p>Danh sách phòng đã đặt</p>
                                                     </div>
-                                                </Badge>
-                                            ) : (
-                                                <div 
-                                                className={cx("flex")}
-                                                style={{
-                                                    justifyContent: "center",
-                                                    alignItems : "center",
-                                                    // padding: "1rem 0",
-                                                    }}
-                                                >
-                                                    <MdOutlineListAlt className={cx('icon')}></MdOutlineListAlt>
-                                                    <p>Danh sách phòng đã đặt</p>
-                                                </div>
-                                            )
-                                        }
-                                        
-                                    </MenuItem>
+                                                )
+                                            }
+
+                                        </MenuItem>
                                     </Link>
                                     <MenuItem onClick={logoutHandle} className={cx('menuItem')}>
                                         <FiLogOut className={cx('icon')}></FiLogOut>
@@ -158,6 +156,7 @@ function Header() {
                             </div>
                         </div>
                     ) : (
+                        // đoạn mã sẽ thực thi vì user chưa đăng nhập
                         <>
                             <Button primary to="/login">
                                 Đăng Nhập
@@ -165,7 +164,7 @@ function Header() {
                         </>
                     )}
                 </div>
-                <div 
+                <div
                     className={cx("menu")}
                     onClick={toggleTabItems}
                 >
@@ -179,3 +178,4 @@ function Header() {
 }
 
 export default Header;
+

@@ -166,7 +166,7 @@ function RoomAdmin() {
                               <td>{text.name}</td>
                               <td>{text.branch}</td>
                               <td>{text.acreage}</td>
-                              <td>{text.price[0]}</td>
+                              <td>{text.price[1]}</td>
                               <td>{text.maxcount}</td>
                               <td>{text.type}</td>
                               <td style={{textAlign:"center"}}>

@@ -1,7 +1,7 @@
-.wrapper{
+.wrapper {
     z-index: 100;
     position: fixed;
-    top:0;
+    top: 0;
     bottom: 0;
     right: 0;
     left: 0;
@@ -12,11 +12,12 @@
     justify-content: center;
     align-items: center;
 }
-.inner{
+
+.inner {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 8px;
+    margin-bottom: -60px;
     align-items: center;
     z-index: 102;
     background-color: rgb(255, 255, 255);
@@ -26,33 +27,40 @@
     position: relative;
     border-radius: 10px;
 }
- .heading {
-            font-size: 24px;
-            color: var(--primary);
-        }
-.closeBtn{
+
+.heading {
+    font-size: 24px;
+    color: var(--primary);
+}
+
+.closeBtn {
     height: 20px;
     cursor: pointer;
     position: absolute;
     top: 3%;
     right: 2%;
+
     // background-color: #f83d3d;
-    .icon{
+    .icon {
         // color:#f83d3d;
         font-size: 20px;
     }
-    &:hover{
-        color:#666666;
+
+    &:hover {
+        color: #666666;
     }
 }
+
 .formPayment {
     display: flex;
     flex-direction: column;
-    padding: 20px 20px;
+    padding: 20px 20px 10px 20px;
+
     .form-group {
         display: flex;
         margin-bottom: 16px;
         flex-direction: column;
+
         .form-control {
             height: 40px;
             padding: 8px 12px;
@@ -60,61 +68,80 @@
             border-radius: 3px;
             outline: none;
             font-size: 1.4rem;
+
             &:hover {
                 border-color: var(--sub);
             }
         }
+
         .form-label {
             font-weight: 700;
             padding-right: 2rem;
             padding-bottom: 6px;
             line-height: 1.8rem;
             font-size: 1.4rem;
+
         }
-        
+
         .form-label {
             text-align: left;
         }
     }
-    
+
     .form-submit {
         padding: 12px 0px;
         width: 100%;
     }
 }
 
-    .left{
-        width: 50%;
-        padding-right:1.5rem;
-    }
-    .right{
-        width: 50%;
-    }
-.headFormDiv{
-    
-    // float:  right;
-    height:50px;
-    padding-bottom: 2rem;
+.left {
+    width: 50%;
+    padding-right: 1.5rem;
 }
+
+.right {
+    width: 50%;
+}
+
+.headFormDiv {
+
+    // float:  right;
+    height: 36px;
+    padding-bottom: 2rem;
+    
+    .roomname{
+        margin-top: 3px;
+        line-height: 1.2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        padding-left: 5px;
+    }
+}
+
 .form-row {
     display: flex;
     justify-content: center;
     align-items: center;
+
     .form-group {
         width: 100%;
     }
 }
+
 .form-row:nth-child(1) {
     .form-group:nth-child(2) {
         padding: 0px 20px;
     }
 }
+
 .form-row:nth-child(2) {
     .form-control {
         height: 250px;
     }
 }
-.paymentSuccessful{
+
+.paymentSuccessful {
     margin-top: 3rem;
     flex-direction: column;
     align-items: center;
@@ -129,56 +156,90 @@
     padding: 2rem;
 
     animation: slideInTop ease-in-out 1s;
-    .iconPaymentSuccess{
-        font-size:27px;
-        color : #0dcc26;
+
+    .iconPaymentSuccess {
+        font-size: 27px;
+        color: #0dcc26;
     }
-    .titlePaymentSuccess{
+
+    .titlePaymentSuccess {
         color: var(--primary)
     }
-    .descPaymentSuccess{
+
+    .descPaymentSuccess {
         text-align: center;
     }
-    .bodyPaymentSuccess{
+
+    .bodyPaymentSuccess {
         background-color: rgb(227, 242, 255);
         padding: 1rem;
     }
-    .btnMakeAnotherBooking{
-        margin-top:2rem;
+
+    .btnMakeAnotherBooking {
+        margin: 10px auto;
+
     }
 }
 
 // .titlePaymentSuccess,
 .descPaymentSuccess,
-.bodyPaymentSuccess{
+.bodyPaymentSuccess {
     padding: 1rem;
 }
 
-.textGroup{
+.textGroup {
     padding: 1rem;
     border-bottom: 1px solid #a8a8a8;
+
     // justify-content: space-around;
-    .textName{
+    .textName {
         font-weight: bold;
         text-align: start;
     }
-    p{
+
+    p {
         width: 50%;
         text-align: end;
     }
 }
-.errorDiv{
-    height:10px;
+
+.errorDiv {
+    // height:10px;
 }
 
 
-@keyframes slideInTop{
+@keyframes slideInTop {
     from {
         opacity: 0.6;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.paymentMethod {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-left: 20px;
+    padding-bottom: 10px;
+
+    label:nth-child(2),
+    label:nth-child(3) {
+        padding-left: 4px;
+        cursor: pointer;
+    }
+
+    input {
+        cursor: pointer;
+    }
+}
+
+.paymentOptions {
+    display: flex;
 }

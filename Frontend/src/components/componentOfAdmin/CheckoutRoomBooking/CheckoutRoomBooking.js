@@ -60,7 +60,7 @@ function CheckoutRoomBooking(props) {
                                 backgroundColor: "#676b6e",
                             }}
                         >
-                            P.10{props.roomchoosed.number}
+                            {props.roomchoosed.name}
                         </h4>
                         <p
                             style={{
@@ -108,12 +108,12 @@ function CheckoutRoomBooking(props) {
                         </div>
                         <p>Sức chứa : {props.roomchoosed.maxcount}</p>
                     </div>
-                    <div className={cx("groupBody")}>
+                    {/* <div className={cx("groupBody")}>
                         <div className={cx("iconGroupBody")}>
                             <BiBed className={"icon"}/>
                         </div>
                         <p>P.10{props.roomchoosed.number}</p>
-                    </div>
+                    </div> */}
                     <div className={cx("groupBody")}>
                         <div className={cx("iconGroupBody")}>
                             <BiPencil className={"icon"}/>
@@ -138,7 +138,7 @@ function CheckoutRoomBooking(props) {
                                 className={cx("flex")}
                                 style={{alignItems:"center"}}
                             >
-                                <p>-Khach đã trả:</p>
+                                <p>-   Khách đã trả:</p>
                                 <h4 
                                     style={{
                                         color:"#e42a1e",

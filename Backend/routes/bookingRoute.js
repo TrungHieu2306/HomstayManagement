@@ -11,4 +11,8 @@ router.post('/cancelbooking',bookingController.cancelBooking)
 router.post('/checkoutBooking',bookingController.checkoutBooking);
 router.post('/confirmbooking/:id',bookingController.confirmBooking);
 router.delete('/deletebookingbyid/:id',bookingController.deleteBooking);
+
+// Route mới để kiểm tra phòng trống
+router.post('/check-availability', bookingController.checkAvailability);
+
 module.exports = router;
