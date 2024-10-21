@@ -7,6 +7,7 @@ import { ImLocation2 } from 'react-icons/im';
 import { BsCheckLg, BsImageFill } from 'react-icons/bs';
 import { useParams } from "react-router-dom";
 import { AiOutlineClose } from 'react-icons/ai';
+import { IoBedOutline} from "react-icons/io5";
 import useFetch from 'src/Hook/useFetch';
 import Loader from 'src/components/Loader';
 import FormBooking from 'src/components/Layout/components/FormBooking';
@@ -51,8 +52,15 @@ function RoomDetail() {
                                         <div className={cx('titleRoom')}>
                                             <h2 className={cx('nameRoom')}>{data.name}</h2>
                                             <div className={cx('branchRoom', 'flex')}>
-                                                <ImLocation2 className={cx('icon')}></ImLocation2>
-                                                <h4>Chi Nhánh: {data.branch}</h4>
+                                                <div className={cx('branchRoomchidren')}>
+                                                    <ImLocation2 className={cx('icon')}></ImLocation2>
+                                                    <h4>Chi nhánh: <span>0{data.branch}</span> </h4>
+                                                </div>
+                                                <div className={cx('branchRoomchidren')}>
+                                                <IoBedOutline className={cx('icon')}/>
+                                                    <h4>Loại phòng: <span>{data.type}</span> </h4>
+                                                </div>
+                                                
                                             </div>
                                         </div>
                                         {/* image */}
@@ -139,8 +147,8 @@ function RoomDetail() {
                                                     <div className={cx('textAdvertisement')}>
                                                         <h3>Ngày quý khách chọn là ngày phổ biến đối với du khách</h3>
                                                         <h4>
-                                                            Cứ mỗi <span>1</span> phút lại có người dùng đặt một chỗ ở
-                                                            <span>Đà Lạt</span> trên Agoda.com
+                                                            Cứ mỗi <span>01</span> phút lại có người dùng đặt một chỗ ở
+                                                            <span> Đà Lạt </span> trên Agoda.com
                                                         </h4>
                                                     </div>
                                                 </div>

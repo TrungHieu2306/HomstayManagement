@@ -4,6 +4,7 @@ import Image from 'src/components/Image';
 import { ImLocation2 } from 'react-icons/im';
 import { BiMoneyWithdraw } from 'react-icons/bi';
 import { BsClipboardCheck } from 'react-icons/bs';
+import { IoBedOutline, IoPeopleOutline } from "react-icons/io5";
 import Button from 'src/components/Button';
 import useFetch from 'src/Hook/useFetch';
 import Loader from 'src/components/Loader';
@@ -50,6 +51,8 @@ function RoomListVertical({dataSearch}) {
                             branch,
                             desc,
                             price,
+                            type,
+                            maxcount
                         }, index) => {
                             return (
                                 <div key={index} className={cx('cartSingleRoom')}>
@@ -64,10 +67,18 @@ function RoomListVertical({dataSearch}) {
                                             <ImLocation2 className={cx('icon')} />
                                             <span className={cx('branchRoom')}>Chi Nhánh: {branch}</span>
                                         </span>
+                                        <span className={cx('container', 'flex')}>
+                                        <IoBedOutline className={cx('icon')}/>
+                                            <span className={cx('branchRoom')}>Loại phòng: {type}</span>
+                                        </span>
+                                        <span className={cx('container', 'flex')}>
+                                        <IoPeopleOutline className={cx('icon')}/>
+                                            <span className={cx('branchRoom')}>Sức chứa: {maxcount} người</span>
+                                        </span>
     
                                         <div className={cx('priceRoom', 'flex')}>
                                             <span className={cx('flex')}>
-                                                <BiMoneyWithdraw className={cx('icon')} />
+                                                <BiMoneyWithdraw className={cx('iconprice')} />
                                                 Giá:
                                             </span>
                                             <h4> {formatter.format(price[1])} </h4>
