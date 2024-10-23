@@ -21,7 +21,7 @@
     z-index: 102;
     background-color: rgb(255, 255, 255);
     min-height: 400px;
-    width: 30%;
+    width: 36%;
     padding: 2rem;
     position: relative;
     border-radius: 10px;
@@ -181,4 +181,9 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.button-group{
+    display: flex;
+    margin-bottom: 11px;
 }

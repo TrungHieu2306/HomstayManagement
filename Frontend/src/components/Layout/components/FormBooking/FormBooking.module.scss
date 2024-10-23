@@ -21,7 +21,7 @@
     // align-items: center;
     z-index: 101;
     background-color: rgb(255, 255, 255);
-    min-height: 500px;
+    height: 500px;
     width: 75%;
     padding: 2rem;
 }
@@ -49,7 +49,8 @@
 .right{
     // width: 50%;
     .body{
-        height: 85%;
+        max-height: 87%;
+        overflow-y: auto;
         padding-left:2rem;
         .titleForm{
         }
@@ -70,7 +71,8 @@ h3{
     color: var(--sub);
 }
 .btnPayment{
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
+    margin: 6px;
 }
 .closeBtn{
     height: 20px;
@@ -83,4 +85,29 @@ h3{
     &:hover{
         color:#666666;
     }
+}
+
+.btnservicesList{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.removeBtn{
+    background-color: #f35555;
+    color: white;
+    font-size: 10px;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    min-width: 30px;
+    display: inline-block;
+}
+
+
+.removeBtn:hover {
+    background-color: #f32b2b; /* Đổi màu khi hover */
 }

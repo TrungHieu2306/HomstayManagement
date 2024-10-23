@@ -103,8 +103,11 @@ function RoomDetail() {
                                         }
                                         {/* acreage and price */}
                                         <div className={cx('acreage-priceRomDiv','flex')}>
-                                            <div className={cx('acreageRoom', 'flex')}>
+                                            {/* <div className={cx('acreageRoom', 'flex')}>
                                                 <span>Diện tích:<h3> {data.acreage} m2</h3></span>
+                                            </div> */}
+                                            <div className={cx('acreageRoom', 'flex')}>
+                                                <span>Sức chứa:<h3> 0{data.maxcount} người</h3></span>
                                             </div>
                                             <div className={cx('priceRoom', 'flex')}>
                                                 <span>Giá:<h3> {(data.price)&&(formatter.format(data.price[1]))} </h3></span>
