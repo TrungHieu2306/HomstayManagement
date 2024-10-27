@@ -1,6 +1,8 @@
 .wrapper {
     height: 632px;
-    background-image: url('https://images.trvl-media.com/lodging/65000000/64180000/64170900/64170859/237df025.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium');
+    // background-image: url('https://images.trvl-media.com/lodging/65000000/64180000/64170900/64170859/237df025.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium');
+    background-image: url('https://img.freepik.com/free-photo/room-interior-hotel-bedroom_23-2150683423.jpg?t=st=1730026014~exp=1730029614~hmac=acfe5abe5102da522ab605b2b5c0741dd8d2e9ebfa74b2108c7d003e33edf842&w=1380');
+    // background-image: url('https://i.pinimg.com/1200x/0a/4c/28/0a4c286f0e1a10e7b3e2e3797c013d92.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -148,7 +150,9 @@
 }  
 .descBranch{
     margin: {
-        left : 15rem;
+        left : 75rem;
     }
-    
+    h4{
+        float: right;
+    }
 }

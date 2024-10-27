@@ -72,7 +72,8 @@ const mongooseSchema = new Schema({
     },
     services:{
         type: [Schema.Types.Mixed],
-    }
+    },
+    imgs: [{ src: String, alt: String }],
 },{
     timestamps: true,
 })

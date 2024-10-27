@@ -10,23 +10,22 @@ function Footer() {
             <div className={cx('inner')}>
                 <div className={cx('content')}>
                     <div className={cx('description')}>
-                        DHouse DaLat
+                        TungHeeu Homestay
                         <div className={cx('description-content')}>
-                            Nằm cách Công viên Yersin 2,1 km, D House Dalat có chỗ nghỉ, nhà hàng,
+                            Nằm cách Công viên Yersin 2,1 km, TungHeeu Homestay có chỗ nghỉ, nhà hàng,
                             quầy bar, sảnh khách chung và khu vườn. Biệt thự cung cấp miễn phí cả
                             WiFi lẫn chỗ đỗ xe riêng. Một số căn tại đây có TV truyền hình cáp màn
                             hình phẳng, khu vực bếp ăn đầy đủ tiện nghi với minibar và phòng tắm
-                            riêng đi kèm vòi sen cùng dép đi trong phòng. Du khách nghỉ tại D House
-                            Dalat có thể thưởng thức bữa sáng kiểu lục địa hoặc bữa sáng kiểu Á. Chỗ
-                            nghỉ có sân hiên. D House Dalat cung cấp dịch vụ cho thuê xe đạp và xe
+                            riêng đi kèm vòi sen cùng dép đi trong phòng. Du khách nghỉ tại TungHeeu Homestay có thể thưởng thức bữa sáng kiểu lục địa hoặc bữa sáng kiểu Á. Chỗ
+                            nghỉ có sân hiên. TungHeeu Homestay cung cấp dịch vụ cho thuê xe đạp và xe
                             hơi trong khi du khách có thể đi xe đạp ở khu vực gần đó. Hồ Xuân Hương
                             và Quảng trường Lâm Viên đều nằm trong bán kính 2,3 km từ biệt thự. Sân
-                            bay gần nhất là sân bay Liên Khương, cách D House Dalat 22 km.
+                            bay gần nhất là sân bay Liên Khương, cách TungHeeu Homestay 22 km.
                         </div>
                     </div>
                     <div className={cx('info')}>
                         <div className={cx('infoContact', 'bold')}>
-                            Liên Hệ
+                            Liên hệ
                             <div className={cx('phone')}>
                                 Số điện thoại
                                 <p className={cx('infoContact-content')}>035 351 4931</p>
@@ -40,7 +39,7 @@ function Footer() {
                             <div className={cx('time')}>
                                 Thời gian nhận & trả phòng
                                 <p className={cx('infoContact-content')}>
-                                Nhận phòng từ 14:00 và trả phòng từ 12:00 trưa
+                                    Nhận phòng từ 14:00 và trả phòng từ 12:00 trưa
                                 </p>
                             </div>
                             <div className={cx('price')}>
@@ -57,10 +56,10 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className={cx('copyRight')}>Copyright © 2024 DHouse DaLat Homestay</div>
+                <div className={cx('copyRight')}>Copyright © 2024 TungHeeu Homestay</div>
             </div>
             <Marquee className={cx('marquee')}>
-                DHouse Dalat lựa chọn hàng đầu trong việc đặt phòng Homestay tại Đà Lạt.
+                TungHeeu Homestay lựa chọn hàng đầu trong việc đặt phòng Homestay tại Đà Lạt.
             </Marquee>
         </div>
     );

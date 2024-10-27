@@ -1,10 +1,244 @@
+// .wrapper {
+//     justify-content: center;
+//     flex-direction: column;
+//     background-color: azure;
+// }
+// .title {
+//     padding: 1.7rem 0;
+//     color: var(--sub);
+//     margin: .5rem 0;
+//     z-index: 2;
+//     text-align: center;
+// }
+// .infoErorr{
+//     padding: 0 0 3rem 0;
+//     justify-content: center;
+//     color: #ef4e4e;
+//     h3{
+//         padding-left: 1rem;
+//         color:#ef4e4e;
+//     }
+// }
+// .bannerAdvertisement{
+//     width: 100%;
+//     height: 800px;
+//     .imgBannerAdv{
+//         width: 100%;
+//         height: 100%;
+//     }
+// }
+// .seeBranch{
+//     background-color: #fff;
+//     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+//     p{
+//         text-align: center;
+//         color: var(--sub);
+//         margin-bottom: 1rem;
+//         padding-bottom: 1rem;
+//     }
+// }
+// .imageRoom {
+//     position: relative;
+//     align-items: center;
+//     justify-content: center;
+//     height: 500px;
+//     width: 100%;
+//     padding-bottom: 6rem;
+//     margin: 0 auto;
+//     .imagePrimary {
+//         height: 100%;
+//         padding-right: 0.7rem;
+//         .image1 {
+//             height: 100%;
+//             object-fit: cover;
+//             border-radius: 10px 0 0 10px;
+//             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+//         }
+//         .img1Branch{
+//             position: relative;
+//             p{
+//                 background-color: #f8feff4a;
+//                 right:0;
+//                 text-align: start;
+//                 position: absolute;
+//                 padding: 1rem;
+//                 left: 0%;
+//                 bottom: -20%;
+//                 font-weight: bold;
+//                 text-transform: uppercase;
+//                 color: #333;
+//             }
+//         }
+//     }
+//     .imageSub {
+//         height: 100%;
+//         width: 40%;
+//         flex-direction: column;
+//         .img2Branch{
+//             height: 50%;
+//             position: relative;
+//             p{
+//                 background-color: rgba(224, 248, 208, 0.29);
+//                 right:0;
+//                 text-align: start;
+//                 position: absolute;
+//                 padding: 1rem;
+//                 left: 0%;
+//                 top: 0%;
+//                 font-weight: bold;
+//                 text-transform: uppercase;
+//                 color: #333;
+//             }
+//             .image2{
+//                 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                
+//             }
+//         }
+//         .img3Branch{
+//             height: 50%;
+//             position: relative;
+//             p{
+//                 background-color: rgba(76, 228, 255, 0.29);
+//                 right:0;
+//                 text-align: start;
+//                 position: absolute;
+//                 padding: 1rem;
+//                 left: 0%;
+//                 bottom: -5%;
+//                 font-weight: bold;
+//                 text-transform: uppercase;
+//                 color: #333;
+//             }
+//             .image3{
+//                 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+//             }
+//         }
+//         .image2 {
+//             padding-bottom: 0.7rem;
+//             height: 100%;
+//             width: 100%;
+//             border-radius: 0 10px 0 0;
+//         }
+//         .image3 {
+//             height: 100%;
+//             width: 100%;
+//             border-radius: 0 0 10px 0;
+//         }
+//     }
+
+// }
+
+// .whychooseusDiv{
+//     width: 100%;
+//     background-color:#f0ffff;
+//     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+//     padding: 2rem;
+//     .reasonDiv{
+//         padding: 1rem 4rem;  
+//         margin: 0 auto;
+//         text-align: center;
+//         width: 33%;
+//         .img{
+//             width: 100px;
+//             height: 100px;
+//         }
+//     }
+// }
+// .bestFeatureDiv{
+//     padding:6rem;
+//     // margin: 1rem;
+//     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+//     background-color: #fff;
+//     .Left-bestFeatureDiv{
+//         width: 50%;
+//         .body-BestFeatures{
+//             width: 90%;
+//             .featureBox{
+//                 padding: 2rem;
+//                 .iconFeatureBox{
+//                  padding: 1.2rem;
+//                  height: 50px;
+//                  border-radius: 4px;
+                 
+//                 }
+//                 .feature-group{
+//                     color:#333;
+//                     padding: 0 1rem;
+//                     margin: 0 2rem;
+//                 }
+//                 &:hover{
+//                     background-color: #eceff1;
+//                     // padding: .5rem;
+//                     padding: 2.5rem;
+//                     cursor: pointer;
+//                     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+//                     border-radius: 4px;
+//                 }
+//             }
+//         }
+//     }
+//     .right-FeatureDiv{
+//         width: 50%;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         .imgFeatureBox{
+            
+//             .top-right-FeatureDiv{
+//                 .imgFeature1{
+//                     border-radius: 0 50px 0 50px;
+//                     margin-right: .5rem;
+//                 }
+//                 .imgFeature2{
+//                     border-radius: 50px 0 50px 0 ;
+//                 }
+//                 margin-bottom: .5rem;
+//             }
+//            .bot-right-FeatureDiv{
+            
+//                 .imgFeature3{
+//                     border-radius: 50px 0 50px 0 ;
+//                     margin-right: .5rem;
+//                 }
+//                 .imgFeature4{
+//                     border-radius: 0 50px 0 50px;
+//                 }
+//            }
+//         }
+        
+//     }
+// }
+// .imgFeature1,
+// .imgFeature2,
+// .imgFeature3,
+// .imgFeature4{
+//     width: 250px;
+//     height: 250px;
+// }
+// .intructionUsage{
+//     padding:6rem;
+//     // margin: 1rem;
+//     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+//     background-color:#f0ffff;
+
+//     .left-intructionUsageDiv{
+//         width: 65%;
+//         .videoIntructionUsage{
+//             width: 700px
+//         }
+//     }
+//     .right-intructionUsageDiv{
+//         width: 35%;
+//     }
+// }
+
+
 .wrapper {
     justify-content: center;
     flex-direction: column;
-    // align-items: center;
-    // padding: 30px 40px;
     background-color: azure;
 }
+
 .title {
     padding: 1.7rem 0;
     color: var(--sub);
@@ -12,227 +246,200 @@
     z-index: 2;
     text-align: center;
 }
-.infoErorr{
+
+.infoErorr {
     padding: 0 0 3rem 0;
     justify-content: center;
     color: #ef4e4e;
-    h3{
+    h3 {
         padding-left: 1rem;
-        color:#ef4e4e;
+        color: #ef4e4e;
     }
 }
-.bannerAdvertisement{
+
+.bannerAdvertisement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 800px;
-    .imgBannerAdv{
-        width: 100%;
-        height: 100%;
-    }
+    background-color: #f0ffff; /* Màu nền tùy chọn */
 }
-.seeBranch{
+
+.imgBannerAdv {
+    width: 80%;                   /* Giảm kích thước hình ảnh xuống 80% */
+    height: auto;                 /* Chiều cao tự động để giữ tỉ lệ */
+    border-radius: 10px;          /* Bo tròn các góc */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 8px 16px; /* Đổ bóng cho hình ảnh */
+    object-fit: cover;            /* Đảm bảo hình ảnh không bị méo */
+    transition: transform 0.3s;   /* Hiệu ứng chuyển đổi khi hover */
+}
+
+.imgBannerAdv:hover {
+    transform: scale(1.05);       /* Phóng to nhẹ hình ảnh khi hover */
+}
+.seeBranch {
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    p{
+    p {
         text-align: center;
         color: var(--sub);
         margin-bottom: 1rem;
         padding-bottom: 1rem;
     }
 }
+
 .imageRoom {
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    height: 500px;
-    width: 100%;
-    // padding: 6rem 0;
+    display: flex;              /* Sử dụng flexbox để xếp các ô nằm ngang */
+    justify-content: space-around; /* Căn giữa các ô với khoảng cách đều nhau */
     padding-bottom: 6rem;
     margin: 0 auto;
-    .imagePrimary {
-        height: 100%;
-        padding-right: 0.7rem;
-        .image1 {
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px 0 0 10px;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        }
-        .img1Branch{
-            // height: 50%;
-            position: relative;
-            p{
-                background-color: #f8feff4a;
-                right:0;
-                // top:0;
-                text-align: start;
-                position: absolute;
-                padding: 1rem;
-                left: 0%;
-                bottom: -20%;
-                font-weight: bold;
-                text-transform: uppercase;
-                color: #333;
-            }
-        }
-    }
-    .imageSub {
-        height: 100%;
-        width: 40%;
-        flex-direction: column;
-        .img2Branch{
-            height: 50%;
-            position: relative;
-            p{
-                background-color: rgba(224, 248, 208, 0.29);
-                right:0;
-                text-align: start;
-                position: absolute;
-                padding: 1rem;
-                left: 0%;
-                top: 0%;
-                font-weight: bold;
-                text-transform: uppercase;
-                color: #333;
-            }
-            .image2{
-                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                
-            }
-        }
-        .img3Branch{
-            height: 50%;
-            position: relative;
-            p{
-                background-color: rgba(76, 228, 255, 0.29);
-                right:0;
-                text-align: start;
-                position: absolute;
-                padding: 1rem;
-                left: 0%;
-                bottom: -5%;
-                font-weight: bold;
-                text-transform: uppercase;
-                color: #333;
-            }
-            .image3{
-                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            }
-        }
-        .image2 {
-            padding-bottom: 0.7rem;
-            height: 100%;
-            width: 100%;
-            border-radius: 0 10px 0 0;
-        }
-        .image3 {
-            height: 100%;
-            width: 100%;
-            border-radius: 0 0 10px 0;
-        }
-    }
-
 }
 
-.whychooseusDiv{
+.imagePrimary {
+    flex: 1;                  /* Mỗi ô chiếm cùng một không gian */
+    margin: 0 1.5rem;        /* Thêm khoảng cách giữa các ô */
+    height: 320px;           /* Đặt chiều cao cố định cho tất cả các ô */
+    background-color: white;  /* Màu nền cho ô */
+    border-radius: 10px;      /* Làm tròn góc */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; /* Đổ bóng cho ô */
+    overflow: hidden;         /* Ẩn phần ngoài ô chữ nhật */
+    transition: transform 0.2s; /* Hiệu ứng chuyển đổi cho hover */
+}
+
+.imagePrimary:hover {
+    transform: translateY(-5px); /* Nâng ô khi hover */
+}
+
+.image1,
+.image2,
+.image3 {
+    width: 100%;              /* Chiều rộng ảnh bằng 100% của ô */
+    height: 100%;             /* Đặt chiều cao ảnh bằng 100% của ô */
+    object-fit: cover;        /* Giữ tỉ lệ cho ảnh và lấp đầy ô mà không bị méo hình */
+    border-radius: 10px 10px 0 0; /* Làm tròn góc trên cho ảnh */
+}
+
+.img1Branch, .img2Branch, .img3Branch {
+    position: relative;
+    text-align: center;       /* Căn giữa nội dung trong ô */
+}
+
+.img1Branch p,
+.img2Branch p,
+.img3Branch p {
+    background-color: rgba(255, 255, 255, 0.8); /* Màu nền cho chữ */
+    padding: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #333;
+    position: absolute;
+    bottom: 10px;            /* Đặt chữ ở đáy ô */
+    left: 0;
+    right: 0;
+    margin: 0;              /* Bỏ margin để căn chính xác */
+}
+
+.whychooseusDiv {
     width: 100%;
-    background-color:#f0ffff;
+    background-color: #f0ffff;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 2rem;
-    .reasonDiv{
-        padding: 1rem 4rem;  
-        margin: 0 auto;
-        text-align: center;
-        width: 33%;
-        .img{
-            width: 100px;
-            height: 100px;
-        }
-    }
 }
-.bestFeatureDiv{
-    padding:6rem;
-    // margin: 1rem;
+
+.reasonDiv {
+    padding: 1rem 4rem;
+    margin: 0 auto;
+    text-align: center;
+    width: 33%;
+}
+
+.img {
+    width: 100px;
+    height: 100px;
+}
+
+.bestFeatureDiv {
+    padding: 6rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     background-color: #fff;
-    .Left-bestFeatureDiv{
-        width: 50%;
-        .body-BestFeatures{
-            width: 90%;
-            .featureBox{
-                padding: 2rem;
-                .iconFeatureBox{
-                 padding: 1.2rem;
-                 height: 50px;
-                 border-radius: 4px;
-                 
-                }
-                .feature-group{
-                    color:#333;
-                    padding: 0 1rem;
-                    margin: 0 2rem;
-                }
-                &:hover{
-                    background-color: #eceff1;
-                    // padding: .5rem;
-                    padding: 2.5rem;
-                    cursor: pointer;
-                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                    border-radius: 4px;
-                }
+}
+
+.Left-bestFeatureDiv {
+    width: 50%;
+    .body-BestFeatures {
+        width: 90%;
+        .featureBox {
+            padding: 2rem;
+            .iconFeatureBox {
+                padding: 1.2rem;
+                height: 50px;
+            }
+            .feature-group {
+                color: #333;
+                padding: 0 1rem;
+                margin: 0 2rem;
+            }
+            &:hover {
+                background-color: #eceff1;
+                padding: 2.5rem;
+                cursor: pointer;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                border-radius: 4px;
             }
         }
-    }
-    .right-FeatureDiv{
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .imgFeatureBox{
-            
-            .top-right-FeatureDiv{
-                .imgFeature1{
-                    border-radius: 0 50px 0 50px;
-                    margin-right: .5rem;
-                }
-                .imgFeature2{
-                    border-radius: 50px 0 50px 0 ;
-                }
-                margin-bottom: .5rem;
-            }
-           .bot-right-FeatureDiv{
-            
-                .imgFeature3{
-                    border-radius: 50px 0 50px 0 ;
-                    margin-right: .5rem;
-                }
-                .imgFeature4{
-                    border-radius: 0 50px 0 50px;
-                }
-           }
-        }
-        
     }
 }
+
+.right-FeatureDiv {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .imgFeatureBox {
+        .top-right-FeatureDiv {
+            .imgFeature1 {
+                border-radius: 0 50px 0 50px;
+                margin-right: .5rem;
+            }
+            .imgFeature2 {
+                border-radius: 50px 0 50px 0;
+            }
+            margin-bottom: .5rem;
+        }
+        .bot-right-FeatureDiv {
+            .imgFeature3 {
+                border-radius: 50px 0 50px 0;
+                margin-right: .5rem;
+            }
+            .imgFeature4 {
+                border-radius: 0 50px 0 50px;
+            }
+        }
+    }
+}
+
 .imgFeature1,
 .imgFeature2,
 .imgFeature3,
-.imgFeature4{
+.imgFeature4 {
     width: 250px;
     height: 250px;
 }
-.intructionUsage{
-    padding:6rem;
-    // margin: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-color:#f0ffff;
 
-    .left-intructionUsageDiv{
+.intructionUsage {
+    padding: 6rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #f0ffff;
+
+    .left-intructionUsageDiv {
         width: 65%;
-        .videoIntructionUsage{
-            width: 700px
+        .videoIntructionUsage {
+            width: 700px;
         }
     }
-    .right-intructionUsageDiv{
+
+    .right-intructionUsageDiv {
         width: 35%;
     }
 }

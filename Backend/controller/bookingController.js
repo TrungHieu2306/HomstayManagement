@@ -265,7 +265,7 @@ const bookingController = {
             deposits,
             requests,
             status,
-            nameuserorder
+            nameuserorder,
         } = req.body;
 
         try {
@@ -296,6 +296,7 @@ const bookingController = {
                 transactionId: '1234',
                 requests,
                 status: status || "booked",
+                imgs: room.imgs.map(img => ({ src: img.src, alt: img.alt }))
             });
 
             const booking = await newbooking.save();
@@ -361,7 +362,8 @@ const bookingController = {
             return res.status(400).json({ message: error });
         }
     },
-    
+
+
     // Get a booking
     getBookingById: async(req, res) => {
         try {
@@ -371,6 +373,7 @@ const bookingController = {
             return res.status(400).json({ message: error });
         }
     },
+    
 
     // Get all booking
     getAllBooking: async(req, res) => {
@@ -381,6 +384,7 @@ const bookingController = {
             return res.status(400).json({ message: error });
         }
     },
+
 
     // Delete booking by id
     deleteBooking: async(req, res) => {

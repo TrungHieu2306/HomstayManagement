@@ -6,6 +6,7 @@ import { BsClipboardCheck } from 'react-icons/bs';
 import Button from 'src/components/Button';
 import useFetch from 'src/Hook/useFetch';
 import Loader from 'src/components/Loader';
+import { IoBedOutline } from 'react-icons/io5';
 
 const cx = classNames.bind(styles);
 function RoomListHorizontal({ className, price, search, selected, fromdate, todate}) {
@@ -99,7 +100,8 @@ function RoomListHorizontal({ className, price, search, selected, fromdate, toda
                                     <ImLocation2 className={cx('icon')} />
                                     <span className={cx('branchRoom')}>Chi Nhánh: {room.branch}</span>
                                 </span>
-                                <p className={cx('acreageRoom')}>Diện tích: {room.acreage} m2</p>
+                                <p className={cx('acreageRoom')}>Loại phòng: {room.type}</p>
+                                <p className={cx('acreageRoom')}>Sức chứa: {room.maxcount} người</p>
                                 <h5 className={cx('color-green')}>Có kinh nghiệm dịch vụ</h5>
     
                                 <div className={cx('descRoom')}>

@@ -113,7 +113,7 @@ function SearchHorizontal(props) {
         <div className={cx('wrapper')} >
             <div className={cx('inner', 'flex')}>
                 <div className={cx('textDiv')}>
-                    <h1 className={cx('smallText')}>DHouse Dalat</h1>
+                    <h1 className={cx('smallText')}>TUNGHEEU HOMESTAY</h1>
                     <h1 className={cx('nameSearch-title')}>Tìm kiếm Homestay phù hợp</h1>
                 </div>
                 <div className={cx('search-container', 'flex')}>
@@ -149,18 +149,6 @@ function SearchHorizontal(props) {
                             {renderSingleInputDateRangePicker}
                         </div>
                     </div>
-                    {/* quanlity */}
-                    {/* <div className={cx('quanlity-Input')}>
-                        <label htmlFor="quanlity">Lựa chọn số lượng người ở</label>
-                        <div className={cx('input', 'flex')}>
-                            <input 
-                                type="number" 
-                                placeholder="Nhập số lượng người ở" 
-                                value={quanlityPeople}
-                                onChange={(e) => {setQuanlityPeople(parseInt(e.target.value))}}
-                            />
-                        </div>
-                    </div> */}
                     <div className={cx('quanlity-Input')}>
                         <label htmlFor="quanlity">Lựa chọn số lượng người ở</label>
                         <div className={cx('input', 'flex')}>
@@ -218,41 +206,41 @@ function SearchHorizontal(props) {
                 <span className={cx("flex")}>
                     <h4
                         style={{
-                            color: "#e8eaf6"
+                            color: "rgb(1 114 167)"
                         }}
                     >Chi nhánh 1 :</h4>
                     <h4
                         style={{
                             paddingLeft: "1.5rem",
-                            color: "#1a237e"
+                            color: "rgb(232 234 246)"
                         }}
-                    >số 131, đường Hoàng Hoa Thám, Phường 10, Thành phố Đà Lạt, tỉnh Lâm Đồng</h4>
+                    >số 14-16, đường Nguyễn Văn Linh, phường Cái Kế, quận Ninh Kiều, thành phố Cần Thơ</h4>
                 </span>
                 <span className={cx("flex")}>
                     <h4
                         style={{
-                            color: "#e8eaf6"
+                            color: "rgb(1 114 167)"
                         }}
                     >Chi nhánh 2 :</h4>
                     <h4
                         style={{
                             paddingLeft: "1.5rem",
-                            color: "#1a237e"
+                            color: "rgb(232 234 246)"
                         }}
-                    >số 53-55 Ba tháng hai , Trung tâm Thành phố Đà Lạt, tỉnh Lâm Đồng</h4>
+                    >số 2-4, đường Võ Văn Kiệt, phường Hưng Phú, quận Cái Răng, thành phố Cần Thơ</h4>
                 </span>
                 <span className={cx("flex")}>
                     <h4
                         style={{
-                            color: "#e8eaf6"
+                            color: "rgb(1 114 167)"
                         }}
                     >Chi nhánh 3 :</h4>
                     <h4
                         style={{
                             paddingLeft: "1.5rem",
-                            color: "#1a237e"
+                            color: "rgb(232 234 246)"
                         }}
-                    >số 5-7A, đường Trần Phú, Phường 3, thành phố Đà Lạc, tỉnh Lâm Đồng</h4>
+                    >số 6, đường Lý Tự Trọng, phường An Thới, quận Bình Thủy, thành phố Cần Thơ</h4>
                 </span>
             </div>
         </div>

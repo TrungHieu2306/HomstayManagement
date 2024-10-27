@@ -108,14 +108,16 @@
     // float:  right;
     height: 36px;
     padding-bottom: 2rem;
-    
-    .roomname{
+
+    .roomname {
         margin-top: 3px;
         line-height: 1.2;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         padding-left: 5px;
+        overflow: hidden;
+        height: 3.8rem;
     }
 }
 
@@ -141,25 +143,40 @@
     }
 }
 
+@keyframes slideInWithBounce {
+    0% {
+        transform: translateY(-100%);
+    }
+    80% {
+        transform: translateY(10%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 .paymentSuccessful {
-    margin-top: 3rem;
+    margin-top: 7rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 200;
     align-items: center;
     width: 450px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 2px double var(--sub);
     background-color: rgb(255, 255, 255);
     min-height: 400px;
     padding: 2rem;
 
-    animation: slideInTop ease-in-out 1s;
+    // animation: slideInTop ease-in-out 1s;
+    animation: slideInWithBounce 0.3s ease-out;
 
     .iconPaymentSuccess {
-        font-size: 27px;
-        color: #0dcc26;
+        img{
+            width: 120px;
+            height: 60px;
+        }
     }
 
     .titlePaymentSuccess {

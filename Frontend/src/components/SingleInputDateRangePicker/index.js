@@ -57,6 +57,7 @@ function SingleInputDateRangePicker() {
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DemoContainer components={['SingleInputDateRangeField']}>
                     <DateRangePicker
+                    sx={{ paddingTop: 0 }}
                         className={cx('DateRangePicker')}
                         value={date}
                         onChange={(newdate) => setDate(newdate)}

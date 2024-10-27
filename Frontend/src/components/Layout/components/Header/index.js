@@ -49,7 +49,8 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('logo')}>
                 <Link to="/">
-                    <img src="/logoPrimary.png" alt="logoHomestay" />
+                    <img src="/logoo1.png" alt="logoHomestay" />
+                    {/* <img src="/logoPrimary.png" alt="logoHomestay" /> */}
                 </Link>
             </div>
             <div className={cx('inner')}>
@@ -59,13 +60,13 @@ function Header() {
                         <div className={cx('tab-item')}>Phòng</div>
                     </Link>
                     <Link to="/Service">
-                        <div className={cx('tab-item')}>Dịch Vụ</div>
+                        <div className={cx('tab-item')}>Dịch vụ</div>
                     </Link>
                     <Link to="/News">
-                        <div className={cx('tab-item')}>Tin Tức</div>
+                        <div className={cx('tab-item')}>Tin tức</div>
                     </Link>
                     <Link to="/Contact">
-                        <div className={cx('tab-item')}>Tư Vấn</div>
+                        <div className={cx('tab-item')}>Tư vấn</div>
                     </Link>
                 </div>
                 {/* checked login */}
