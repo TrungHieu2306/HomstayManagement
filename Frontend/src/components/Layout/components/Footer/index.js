@@ -12,15 +12,14 @@ function Footer() {
                     <div className={cx('description')}>
                         TungHeeu Homestay
                         <div className={cx('description-content')}>
-                            Nằm cách Công viên Yersin 2,1 km, TungHeeu Homestay có chỗ nghỉ, nhà hàng,
+                            Nằm cách Công viên Lưu Hữu Phước 2,1 km, TungHeeu Homestay có chỗ nghỉ, nhà hàng,
                             quầy bar, sảnh khách chung và khu vườn. Biệt thự cung cấp miễn phí cả
                             WiFi lẫn chỗ đỗ xe riêng. Một số căn tại đây có TV truyền hình cáp màn
                             hình phẳng, khu vực bếp ăn đầy đủ tiện nghi với minibar và phòng tắm
                             riêng đi kèm vòi sen cùng dép đi trong phòng. Du khách nghỉ tại TungHeeu Homestay có thể thưởng thức bữa sáng kiểu lục địa hoặc bữa sáng kiểu Á. Chỗ
                             nghỉ có sân hiên. TungHeeu Homestay cung cấp dịch vụ cho thuê xe đạp và xe
-                            hơi trong khi du khách có thể đi xe đạp ở khu vực gần đó. Hồ Xuân Hương
-                            và Quảng trường Lâm Viên đều nằm trong bán kính 2,3 km từ biệt thự. Sân
-                            bay gần nhất là sân bay Liên Khương, cách TungHeeu Homestay 22 km.
+                            hơi trong khi du khách có thể đi xe đạp ở khu vực gần đó. Bến Ninh Kiều và Chợ nổi Cái Răng đều nằm trong bán kính 2,9 km từ biệt thự. Sân
+                            bay gần nhất là sân bay Trà Nóc, cách TungHeeu Homestay 22 km.
                         </div>
                     </div>
                     <div className={cx('info')}>
@@ -33,17 +32,17 @@ function Footer() {
                             <div className={cx('address')}>
                                 Địa chỉ
                                 <p className={cx('infoContact-content')}>
-                                    131 Hoàng Hoa Thám, Phường 10, Thành phố Đà Lạt, Lâm Đồng
+                                    số 14-16, đường Nguyễn Văn Linh, phường Cái Kế, quận Ninh Kiều, thành phố Cần Thơ
                                 </p>
                             </div>
                             <div className={cx('time')}>
                                 Thời gian nhận & trả phòng
                                 <p className={cx('infoContact-content')}>
-                                    Nhận phòng từ 14:00 và trả phòng từ 12:00 trưa
+                                    nhận phòng từ 14:00 và trả phòng từ 12:00 trưa
                                 </p>
                             </div>
                             <div className={cx('price')}>
-                                Mức giá
+                                mức giá
                                 <p className={cx('infoContact-content')}>Giá phòng từ 399.000 VND</p>
                             </div>
                         </div>
@@ -59,7 +58,7 @@ function Footer() {
                 <div className={cx('copyRight')}>Copyright © 2024 TungHeeu Homestay</div>
             </div>
             <Marquee className={cx('marquee')}>
-                TungHeeu Homestay lựa chọn hàng đầu trong việc đặt phòng Homestay tại Đà Lạt.
+                TungHeeu Homestay lựa chọn hàng đầu trong việc đặt phòng Homestay tại thành phố Cần Thơ.
             </Marquee>
         </div>
     );

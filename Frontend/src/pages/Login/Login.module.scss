@@ -7,20 +7,31 @@
     width: 100vw;
     box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1);
 }
+
 .bg {
     overflow: hidden;
-    padding: 32px 0px;
+    padding: 32px 0;
+
     img {
         height: 500px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng mượt khi hover */
+    }
+
+    /* Hiệu ứng di chuyển lên và đổ bóng mạnh hơn khi chạm hoặc hover */
+    img:hover, img:active {
+        transform: translateY(-10px); /* Di chuyển ảnh lên trên 10px */
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4); /* Tăng độ mờ và độ rộng của đổ bóng */
     }
 }
+
 .main {
     display: flex;
     justify-content: center;
     margin-bottom: 8px;
     .form {
         flex-direction: column;
-        width: 360px;
+        width: 340px;
         min-height: 100px;
         padding: 32px 32px;
         text-align: center;

@@ -1,8 +1,8 @@
-.wrapper{
+.wrapper {
     z-index: 100;
-    
+
     position: fixed;
-    top:0;
+    top: 20px;
     bottom: 0;
     right: 0;
     left: 0;
@@ -13,7 +13,8 @@
     justify-content: center;
     align-items: center;
 }
-.inner{
+
+.inner {
     border-radius: 5px;
     display: flex;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -21,80 +22,94 @@
     // align-items: center;
     z-index: 101;
     background-color: rgb(255, 255, 255);
-    height: 500px;
+    height: 560px;
     width: 75%;
     padding: 2rem;
 }
 
-.left{
+.left {
     width: 65%;
     border-right: 1px solid #cecece;
+
     // height: 100%;
     // height: 550px;
-    .imgRoom{
+    .imgRoom {
         height: 400px;
-        .img{   
-            height:390px;
+
+        .img {
+            height: 390px;
             width: 100%;
             // height: 60vh;
             overflow: hidden;
         }
     }
-    .nameRoom{
+
+    .nameRoom {
         padding-bottom: 1rem;
-        
+
     }
+
     padding-right:4rem;
 }
-.right{
+
+.right {
+
     // width: 50%;
-    .body{
+    .body {
         max-height: 87%;
         overflow-y: auto;
-        padding-left:2rem;
-        .titleForm{
-        }
+        padding-left: 2rem;
+
+        .titleForm {}
+
         line-height: 3.5rem;
-    
+
     }
 }
-.text{
+
+.text {
     font-size: 20px;
     font-weight: 600;
     padding-top: 4px;
 
 }
-.totalamount{
+
+.totalamount {
     color: #f83d3d;
 }
-h3{
+
+h3 {
     color: var(--sub);
 }
-.btnPayment{
+
+.btnPayment {
     // margin-bottom: 50px;
     margin: 6px;
 }
-.closeBtn{
+
+.closeBtn {
     height: 20px;
     cursor: pointer;
+
     // background-color: #f83d3d;
-    .icon{
+    .icon {
         // color:#f83d3d;
         font-size: 20px;
     }
-    &:hover{
-        color:#666666;
+
+    &:hover {
+        color: #666666;
     }
 }
 
-.btnservicesList{
+.btnservicesList {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.removeBtn{
+.removeBtn {
     background-color: #f35555;
     color: white;
     font-size: 10px;
@@ -109,7 +124,8 @@ h3{
 
 
 .removeBtn:hover {
-    background-color: #f32b2b; /* Đổi màu khi hover */
+    background-color: #f32b2b;
+    /* Đổi màu khi hover */
 }
 
 .date-Input .input input[type="date"] {

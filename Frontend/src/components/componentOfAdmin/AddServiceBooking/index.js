@@ -115,7 +115,7 @@ function AddServiceBooking(props) {
                     <AiOutlineClose className={cx("icon")} onClick={closeHandle} />
                 </div>
                 <h2 className={cx('heading')}>Thêm dịch vụ</h2>
-                <p className={cx('desc')}>  Tìm kiếm Homestay đơn giản với Dhouse</p>
+                <p className={cx('desc')}>  Tìm kiếm Homestay đơn giản với TuungHeeu</p>
                 <form
                     className={cx('formAddService')}
                     id="form"
@@ -220,8 +220,8 @@ function AddServiceBooking(props) {
                             &&
                             listService.map((serviceval, index) => (
                                 <li key={index} className={cx("flex")}>
-                                    <h4>{serviceval.name} :</h4>
-                                    <p>{formatter.format(serviceval.price)} x 0{serviceval.quantity} =</p>
+                                    <h4>{serviceval.name}:&#160;</h4>
+                                    <p>{formatter.format(serviceval.price)} x 0{serviceval.quantity} =&#160;</p>
                                     <p style={{ color: "#00695c", fontWeight: "bold" }}>{formatter.format(serviceval.totalamount)}</p>
                                 </li>
                             ))
@@ -230,7 +230,7 @@ function AddServiceBooking(props) {
                     </ul>
                     {totalamount !== 0 && (
                         <div className={cx("flex")}>
-                            <h4>Tổng tiền dịch vụ :</h4>
+                            <h4>Tổng tiền dịch vụ:&#160;</h4>
                             <h4 style={{ color: "#e64a19", fontWeight: "bold" }}>{formatter.format(totalamount)}</h4>
                         </div>
                     )

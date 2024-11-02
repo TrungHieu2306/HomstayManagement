@@ -144,7 +144,7 @@ function SearchHorizontal(props) {
                     </div>
                     {/* date */}
                     <div className={cx('date-Input')}>
-                        <label >Lựa chọn ngày đến</label>
+                        <label >Lựa chọn ngày đến, ngày đi</label>
                         <div className={cx('dateRangePicker', 'flex')}>
                             {renderSingleInputDateRangePicker}
                         </div>

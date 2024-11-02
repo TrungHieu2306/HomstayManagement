@@ -399,21 +399,21 @@
     .imgFeatureBox {
         .top-right-FeatureDiv {
             .imgFeature1 {
-                border-radius: 0 50px 0 50px;
+                border-radius: 50px;
                 margin-right: .5rem;
             }
             .imgFeature2 {
-                border-radius: 50px 0 50px 0;
+                border-radius: 50px;
             }
             margin-bottom: .5rem;
         }
         .bot-right-FeatureDiv {
             .imgFeature3 {
-                border-radius: 50px 0 50px 0;
+                border-radius: 50px;
                 margin-right: .5rem;
             }
             .imgFeature4 {
-                border-radius: 0 50px 0 50px;
+                border-radius: 50px;
             }
         }
     }
@@ -425,7 +425,16 @@
 .imgFeature4 {
     width: 250px;
     height: 250px;
+    transition: box-shadow 0.1s ease; /* Thêm hiệu ứng chuyển đổi cho đổ bóng */
 }
+
+.imgFeature1:hover,
+.imgFeature2:hover,
+.imgFeature3:hover,
+.imgFeature4:hover {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
+}
+
 
 .intructionUsage {
     padding: 6rem;

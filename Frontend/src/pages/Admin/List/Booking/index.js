@@ -68,7 +68,7 @@ function Booking() {
             <div className={cx("right")}>
                 <Header></Header>
                 <div className={cx("title","flex")}> 
-                  <h2>Đơn đặt phòng</h2>
+                  <h2>Quản lý đơn đặt phòng</h2>
                   {/* <Button feature className={cx("btn",'updateBtn')}>Cập nhật</Button> */}
                 </div>
                 {loading ? <Loader/> : (
@@ -78,15 +78,16 @@ function Booking() {
                       <tr>
                         <th>stt</th>
                         {/* <th>id</th> */}
-                        <th className={cx("nameTH")} >name user</th>
-                        <th className={cx("roomTH")}>room</th>
-                        <th className={cx("dateTH")}>order date</th> 
-                        <th className={cx("dateTH")}>check in</th>
-                        <th className={cx("dateTH")}>check out</th>
-                        <th>Trạng thái</th>
-                        <th>thành tiền</th>
+                        <th className={cx("nameTH")} >Tên khách hàng</th>
+                        <th className={cx("roomTH")}>Tên phòng</th>
+                        <th className={cx("dateTH")}>Ngày đặt</th> 
+                        <th className={cx("dateTH")}>Ngày đến</th>
+                        <th className={cx("dateTH")}>Ngày đi</th>
+                        <th>Trạng thái x/n</th>
+                        <th>Thành tiền</th>
+                        <th>Thanh toán</th>
                         <th style={{textAlign:"center"}}>Thao tác</th>
-                        <th>action</th>
+                        <th>Xóa đơn</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -134,6 +135,7 @@ function Booking() {
                             )}
                           </td>
                           <td>{text.totalamount}</td>
+                          <td>Chưa thanh toán</td>
                           <td>{
                             (text.status==="booked") ? (
                                 <div className={cx("flex")}>

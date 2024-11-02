@@ -58,7 +58,7 @@ function Login() {
                 <div className={cx('bg')}>
                     <img
                         style={{ height: formHeight }}
-                        src="https://pix8.agoda.net/hotelImages/21963103/-1/807f7622378ac71fef1392d8fbd021b1.jpg?ca=29&ce=0&s=1024x768"
+                        src="https://i.pinimg.com/564x/f1/ba/82/f1ba82ad7808a47b58fc207f1ed54169.jpg"
                         alt="bgLogin"
                     />
                 </div>
@@ -71,7 +71,7 @@ function Login() {
                                 id="form-2"
                             >
                                 <h3 className={cx('heading')}>Đăng Nhập</h3>
-                                <p className={cx('desc')}>Tìm kiếm Homestay đơn giản với Dhouse</p>
+                                <p className={cx('desc')}>Tìm kiếm Homestay đơn giản với TuungHeeu</p>
                                 <div className={cx('spacer')}></div>
                                 {/* email */}
                                 <div className={cx('form-group')}>

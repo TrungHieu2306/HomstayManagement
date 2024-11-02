@@ -97,7 +97,7 @@ function Home() {
             {/* See branch */}
             <div className={cx("seeBranch")}>
                 <h1 className={cx('title')}>Lựa chọn chi nhánh</h1>
-                <p>Homestay có nhiều chi nhánh để cho bạn lựa chọn phù hợp với điểm đến của bạn, mõi chi nhánh đều có những dịch vụ, tiện nghi khác nhau phục vụ cho nhu cầu của bạn.</p>
+                <p>Homestay có nhiều chi nhánh để cho bạn lựa chọn phù hợp với điểm đến của bạn, mỗi chi nhánh đều có những dịch vụ, tiện nghi khác nhau phục vụ cho nhu cầu của bạn</p>
                 <div className={cx('imageRoom', 'flex')}>
                     <div className={cx('imagePrimary')}>
                         <Link to='/Room' className={cx("img1Branch")}>
@@ -168,7 +168,7 @@ function Home() {
                             src="https://cdn-icons-png.flaticon.com/512/313/313176.png"
                             alt="money"
                         />
-                        <h3>Giá Cả Hợp Lý</h3>
+                        <h3>Giá cả hợp lý</h3>
                         <p>Homestay đặt ra những mức giá phù hợp với giá cả thị trường và phù hợp với khách hàng</p>
                     </div>
                     <div className={cx("reasonDiv")}>
@@ -177,7 +177,7 @@ function Home() {
                             src="https://cdn-icons-png.flaticon.com/512/3837/3837136.png"
                             alt="voucher"
                         />
-                        <h3>Khuyến Mãi,Ưu Đãi</h3>
+                        <h3>Khuyến mãi, ưu đãi</h3>
                         <p>Đề ra nhiều chính sách ưu đãi trong những dịp lễ cho khách du lịch và kèm thêm nhiều khuyến mãi vourcher cho khách hàng thành viên</p>
                     </div>
                     <div className={cx("reasonDiv")}>
@@ -186,8 +186,8 @@ function Home() {
                             src="https://cdn-icons-png.flaticon.com/512/1533/1533265.png"
                             alt="convenient"
                         />
-                        <h3>Tiện Nghi</h3>
-                        <p>Cung cấp nhiều tiện nghi giúp cho khách du lịch có 1 trải nghiệm tuyệt vời tại xứ sở Đà Lạt</p>
+                        <h3>Tiện nghi</h3>
+                        <p>Cung cấp nhiều tiện nghi giúp cho khách du lịch có 1 trải nghiệm tuyệt vời tại thành phố Cần Thơ</p>
                     </div>
                 </div>
             </div>
@@ -197,11 +197,11 @@ function Home() {
                     <h5
                         style={{ color: "#0172a7" }}
                     >
-                        Tuung Heeu
+                        TuungHeeu Homestay
                     </h5>
                     <h3 >Những tính năng tốt giành cho bạn</h3>
-                    <p>Tuung Heeu cung cấp cho khách hàng nhiều tính năng hữu dụng giúp cho bạn có thể dễ dàng thao tác và tương tác với
-                        Homestaye đồng thời cũng dễ dàng những dịch vụ mà Tuung Heeu cung cấp.
+                    <p> TuungHeeu Homestay cung cấp cho khách hàng nhiều tính năng hữu dụng giúp cho bạn có thể dễ dàng thao tác và tương tác với
+                        Homestaye đồng thời cũng dễ dàng những dịch vụ mà TuungHeeu Homestay cung cấp.
                     </p>
                     <div className={cx("body-BestFeatures")}>
                         <Link to="/Room">
@@ -216,7 +216,7 @@ function Home() {
                                 </div>
                                 <div className={cx("feature-group")}>
                                     <h4>Đặt phòng nhanh</h4>
-                                    <p>Dễ dàng trong việc tìm kiếm và lựa chọn phòng phù hợp với nhu cầu khách hàng để có được nơi nghỉ dường tuyệt vời tại Đà lạt</p>
+                                    <p>Dễ dàng trong việc tìm kiếm và lựa chọn phòng phù hợp với nhu cầu khách hàng để có được nơi nghỉ dường tuyệt vời tại thành phố Cần Thơ</p>
                                 </div>
                             </div>
                         </Link>
@@ -248,7 +248,7 @@ function Home() {
                                 </div>
                                 <div className={cx("feature-group")}>
                                     <h4>Xem tin tức</h4>
-                                    <p>Nắm bắt được tình hình những cập nhật mới Tuung Heeu và bắt kịp xu hướng du lịch hiện nay</p>
+                                    <p>Nắm bắt được tình hình những cập nhật mới TuungHeeu Homestay và bắt kịp xu hướng du lịch hiện nay</p>
                                 </div>
                             </div>
                         </Link>

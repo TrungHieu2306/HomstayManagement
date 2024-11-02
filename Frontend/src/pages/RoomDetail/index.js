@@ -120,7 +120,7 @@ function RoomDetail() {
                                                 <div className={cx('desc-addressRoom')}>
                                                     {/* Name Homestay */}
                                                     <div className={cx('titleHomestay')}>
-                                                        <h2>D House Dalat</h2>
+                                                        <h2>TunggHeeu Homestay</h2>
                                                     </div>
                                                     {/* Address Room */}
                                                     <div className={cx('addressRoom')}>Địa chỉ: {data.address}</div>
@@ -151,7 +151,7 @@ function RoomDetail() {
                                                         <h3>Ngày quý khách chọn là ngày phổ biến đối với du khách</h3>
                                                         <h4>
                                                             Cứ mỗi <span>01</span> phút lại có người dùng đặt một chỗ ở
-                                                            <span> Đà Lạt </span> trên Agoda.com
+                                                            <span> thành phố Cần Thơ </span> trên Agoda.com
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -216,7 +216,7 @@ function RoomDetail() {
                                                         scrolling="no" 
                                                         marginHeight="0" 
                                                         marginWidth="0" 
-                                                        src="https://maps.google.com/maps?width=1610&amp;height=510&amp;hl=en&amp;q=Dhouse Đà Lạt&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                                                        src="https://maps.google.com/maps?width=1610&amp;height=510&amp;hl=en&amp;q=Serathon, thành phố Cần thơ&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
                                                     </iframe>
                                                     <a href="https://connectionsgame.org/">Connections NYT</a>
                                                 </div>
