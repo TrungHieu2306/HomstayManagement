@@ -1,14 +1,15 @@
-
 import classNames from "classnames/bind";
-import style from './ListBooked.module.scss'
+import style from './ListBooked.module.scss';
 import Button from "src/components/Button";
 import Loader from "src/components/Loader";
 import useFetch from "src/Hook/useFetch";
 import { useEffect, useState } from "react";
 import { BiSolidError } from "react-icons/bi";
+import { FaServicestack } from "react-icons/fa";
 import Chip from '@mui/material-next/Chip';
 import axios from "axios";
 import Swal from "sweetalert2";
+
 const cx = classNames.bind(style);
 
 function ListBooked() {
@@ -16,21 +17,16 @@ function ListBooked() {
     const [currentImages, setCurrentImages] = useState({});
     const user = JSON.parse(localStorage.getItem('currentUser'));
     const { data, loading } = useFetch(`/api/booking/getbookingsbyuserid/${user._id}`);
-    const [showPayPalButton, setShowPayPalButton] = useState({});
-
 
     useEffect(() => {
-        setBookings(data);
-    }, [data]);
-
-    useEffect(() => {
-        setBookings(data);
-        // Initialize currentImages state for each booking
-        const initialImages = {};
-        data.forEach((booking, index) => {
-            initialImages[index] = 0; // Start with the first image for each booking
-        });
-        setCurrentImages(initialImages);
+        if (data) {
+            setBookings(data);
+            const initialImages = {};
+            data.forEach((booking, index) => {
+                initialImages[index] = 0; // Start with the first image for each booking
+            });
+            setCurrentImages(initialImages);
+        }
     }, [data]);
 
     const handleImageChange = (index, direction) => {
@@ -38,7 +34,7 @@ function ListBooked() {
             const totalImages = bookings[index]?.imgs.length || 0;
             const currentIndex = prev[index] || 0;
 
-            if (totalImages > 1) { // Check if there's more than one image
+            if (totalImages > 1) {
                 const newIndex =
                     direction === 'next'
                         ? (currentIndex + 1) % totalImages
@@ -49,7 +45,6 @@ function ListBooked() {
             }
         });
     };
-
 
     async function cancelBooking(bookingid, roomid) {
         try {
@@ -73,7 +68,6 @@ function ListBooked() {
         }
     }
 
-    // Hàm để gộp các dịch vụ cùng tên lại và tính tổng số lượng
     function groupServices(services) {
         const groupedServices = {};
 
@@ -89,7 +83,6 @@ function ListBooked() {
         return Object.values(groupedServices);
     }
 
-
     const renderPayPalButton = (booking, index) => {
         window.paypal.Buttons({
             createOrder: (data, actions) => {
@@ -103,10 +96,19 @@ function ListBooked() {
                     ],
                 });
             },
-            onApprove: (data, actions) => {
-                return actions.order.capture().then((details) => {
-                    Swal.fire("Payment Successful", `Transaction completed by ${details.payer.name.given_name}`, "success");
-                });
+            onApprove: async (data, actions) => {
+                const details = await actions.order.capture();
+                Swal.fire("Payment Successful", `Transaction completed by ${details.payer.name.given_name}`, "success");
+
+                // Call the payment success endpoint here
+                try {
+                    await axios.post('/api/booking/process-Payment', { transactionId: details.id, bookingId: booking._id });
+                    // Optionally reload or refresh bookings
+                    setBookings((prevBookings) => prevBookings.map(b => b._id === booking._id ? { ...b, paymentStatus: 'paid' } : b));
+                } catch (error) {
+                    console.error("Failed to update payment status:", error);
+                    Swal.fire("Error", "Failed to update payment status", "error");
+                }
             },
             onError: (err) => {
                 console.error("PayPal Checkout Error:", err);
@@ -120,7 +122,7 @@ function ListBooked() {
         script.src = `https://www.paypal.com/sdk/js?client-id=AfyKyOyZwHWh3q_H4ZGJphdfpvvzmXBSA7wALz_kwHoiu7rAaV62hwvWlPB6nuYIqKEmQBp21eh-4qyv&currency=USD`;
         script.addEventListener("load", () => {
             bookings.forEach((booking, index) => {
-                if (showPayPalButton[index]) {
+                if (booking.paymentStatus === 'unpaid') {
                     renderPayPalButton(booking, index);
                 }
             });
@@ -130,9 +132,13 @@ function ListBooked() {
         return () => {
             document.body.removeChild(script);
         };
-    }, [bookings, showPayPalButton]);
+    }, [bookings]);
 
-
+    const statusMapping = {
+        booked: "Chờ xác nhận",
+        success: "Đã xác nhận",
+        cancelled: "Đã hủy"
+    };
     return (
         <div className={cx('wrapper')}>
             <h2>DANH SÁCH THÔNG TIN CÁC PHÒNG ĐÃ ĐẶT</h2>
@@ -141,76 +147,72 @@ function ListBooked() {
                     bookings.length > 0 ? (
                         bookings.map((booking, index) => (
                             <div className={cx('cart')} key={index}>
-
                                 <div className={cx('nameCart')}>
                                     <h3>{booking.room}</h3>
                                 </div>
                                 <div className={cx('bodyCart')}>
-                                    {/* Thông tin phòng */}
                                     <div className={cx('bodyCart0')}>
                                         {booking.imgs && booking.imgs.length > 0 ? (
                                             <div className={cx('image-slider')}>
                                                 <div className={cx('main-image-wrapper')}>
                                                     <img
-                                                        src={booking.imgs[currentImages[index]]?.src} // Use currentImages for the current image
+                                                        src={booking.imgs[currentImages[index]]?.src}
                                                         alt={booking.imgs[currentImages[index]]?.alt}
                                                         className={cx('main-image')}
                                                     />
                                                 </div>
                                                 <div className={cx('slider-controls')}>
                                                     <button
-                                                        onClick={() => handleImageChange(index, 'prev')} // Handle previous image
+                                                        onClick={() => handleImageChange(index, 'prev')}
                                                         className={cx('slider-button')}
                                                     >
-                                                        &#10094; {/* Left Arrow */}
+                                                        &#10094;
                                                     </button>
                                                     <button
-                                                        onClick={() => handleImageChange(index, 'next')} // Handle next image
+                                                        onClick={() => handleImageChange(index, 'next')}
                                                         className={cx('slider-button')}
                                                     >
-                                                        &#10095; {/* Right Arrow */}
+                                                        &#10095;
                                                     </button>
                                                 </div>
                                             </div>
                                         ) : (
                                             <p>Không có hình ảnh nào</p>
                                         )}
-
                                     </div>
                                     <div className={cx('bodyCart1')}>
                                         <div className={cx('bodyCart11')}>
                                             <div className={cx('idBookingCart', 'flex')}>
-                                                <h4>Tên người đặt phòng:  &#160;</h4> {booking.nameuserorder}
+                                                <h4>Mã đơn phòng:  &#160;</h4>{booking._id}
+                                            </div>
+                                            <div className={cx('idBookingCart', 'flex')}>
+                                                <h4>Tên khách hàng:  &#160;</h4> {booking.nameuserorder}
                                             </div>
                                             <div className={cx('idBookingCart', 'flex')}>
                                                 <h4>Số điện thoại:  &#160;</h4>0{booking.phone}
-                                            </div>
-                                            <div className={cx('idBookingCart', 'flex')}>
-                                                <h4>Mã đơn phòng:  &#160;</h4>{booking._id}
                                             </div>
                                             <div className={cx('idBookingCart', 'flex')}>
                                                 <h4>Loại phòng:  &#160;</h4>{booking.type}
                                             </div>
                                         </div>
                                         <div className={cx('bodyCart12')}>
-                                            {/* Hiển thị các dịch vụ đã đặt nếu có */}
                                             {booking.services && booking.services.length > 0 && (
                                                 <div className={cx('servicesBookingCart', 'flex')}>
-                                                    <h4>Dịch vụ đã đặt: &#160;</h4>
-                                                    <ul>
-                                                        {groupServices(booking.services).map((service, index) => (
-                                                            <li key={index}>
-                                                                {service.name} {/* - Số lượng: {service.quantity}*/}
-                                                            </li>
-                                                        ))}
-                                                    </ul>
+                                                    <FaServicestack className={cx('service')} />
+                                                    <div className={cx('box')}>
+                                                        <h4>Dịch vụ đã đặt: &#160;</h4>
+                                                        <ul>
+                                                            {groupServices(booking.services).map((service, index) => (
+                                                                <li key={index}>
+                                                                    {service.name}
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             )}
                                         </div>
-
                                     </div>
-
-                                    {/* Ngày và tổng tiền */}
                                     <div className={cx('bodyCart2')}>
                                         <div className={cx('checkinBookingCart', 'flex')}>
                                             <h4>Ngày đặt phòng:  &#160;</h4>{booking.orderdate}
@@ -222,94 +224,46 @@ function ListBooked() {
                                             <h4>Ngày đi:  &#160;</h4>{booking.todate}
                                         </div>
                                         <div className={cx('checkoutBookingCart', 'flex')}>
-                                            <h4>Tổng số ngày:  &#160;</h4>0{
-                                                booking.totaldays} ngày
+                                            <h4>Tổng số tiền:  &#160;</h4>{booking.totalamount} VND
                                         </div>
-                                        <div className={cx('amountBookingCart', 'flex')}>
-                                            <h4>Tổng thành tiền:  &#160;</h4>
-                                            <h4 style={{ color: "#00897b" }}>{booking.totalamount}</h4>
+                                        <div className={cx('checkoutBookingCart', 'flex')}>
+                                            <h4>Trạng thái đặt phòng: &#160;</h4>
+                                            {/* <Chip
+                                                label={statusMapping[booking.status] || booking.status}
+                                                color={booking.status === 'pending' ? 'warning' : (booking.status === 'approved' ? 'success' : 'error')}
+                                            /> */}
+                                            <Chip
+                                                label={statusMapping[booking.status] || booking.status}
+                                                color={
+                                                    booking.status === 'booked' ? 'warning' :
+                                                        (booking.status === 'success' ? 'success' :
+                                                            'error')
+                                                }
+                                                className={cx('large-text')}
+                                            />
+
                                         </div>
-
-                                        {/* Trạng thái đơn phòng */}
-                                        <div className={cx('statusBookingCart', 'flex')}>
-                                            <h4>Trạng Thái:</h4>
-                                            {booking.status === 'booked' && (
-                                                <Chip
-                                                    sx={{ fontSize: "14px", fontWeight: "bold", m: "0 0 0 1rem " }}
-                                                    color="warning"
-                                                    size="small"
-                                                    label="Chờ xác nhận"
-                                                    variant="filled"
-                                                />
-                                            )}
-                                            {booking.status === 'cancelled' && (
-                                                <Chip
-                                                    sx={{ fontSize: "14px", fontWeight: "bold", m: "0 0 0 1rem " }}
-                                                    color="error"
-                                                    size="small"
-                                                    label="Đã hủy"
-                                                    variant="filled"
-                                                />
-                                            )}
-                                            {booking.status === 'success' && (
-                                                <Chip
-                                                    sx={{ fontSize: "14px", fontWeight: "bold", m: "0 0 0 1rem " }}
-                                                    color="success"
-                                                    size="small"
-                                                    label="Đã được xác nhận"
-                                                    variant="filled"
-                                                />
-                                            )}
+                                        <div className={cx('checkoutBookingCart', 'flex')}>
+                                            <h4>Trạng thái thanh toán:  &#160;</h4>
+                                            <Chip
+                                                label={booking.paymentStatus === 'paid' ? 'Đã thanh toán' : 'Chưa thanh toán'}
+                                                color={booking.paymentStatus === 'paid' ? 'success' : 'error'}
+                                                className={cx('large-text')}
+                                            />
                                         </div>
-
-
                                     </div>
                                 </div>
-
-                                {/* Các nút thao tác */}
-                                {booking.status !== 'cancelled' ? (
-                                    <div className={cx('btnBookingCart', 'flex')}>
-                                        <Button
-                                            className={cx('btn', 'paypalBtn')}
-                                            onClick={() => setShowPayPalButton(prev => ({ ...prev, [index]: !prev[index] }))}
-                                        >
-                                            Thanh toán PayPal
-                                        </Button>
-                                        {showPayPalButton[index] && (
-                                            <div id={`paypal-button-container-${index}`} className={cx('paypalButtonContainer')}></div>
-                                        )}
-                                        
-                                        <Button
-                                            className={cx('btn', 'cancelBtn')}
-                                            onClick={() => { cancelBooking(booking._id, booking.roomid) }}
-                                        >
-                                            Huỷ đơn
-                                        </Button>
-                                        <Button
-                                            className={cx('btn', 'addBtn')}
-                                            to={`/Book/${booking.roomid}/${booking.fromdate}/${booking.todate}`}
-                                        >
-                                            Xem Chi Tiết
-                                        </Button>
-
-                                    </div>
-                                ) : (
-                                    <div className={cx('btnBookingCart', 'flex')}>
-                                        <Button
-                                            className={cx('btn', 'cancelBtn')}
-                                            onClick={() => { deleteBooking(booking._id) }}
-                                        >
-                                            Xóa đơn
-                                        </Button>
-                                    </div>
-                                )}
+                                <div className={cx('actionButtons')}>
+                                    {booking.paymentStatus === 'unpaid' && (
+                                        <div id={`paypal-button-container-${index}`} className={cx('paypal-button')} />
+                                    )}
+                                    <Button onClick={() => cancelBooking(booking._id, booking.roomid)}>Hủy đơn</Button>
+                                    <Button onClick={() => deleteBooking(booking._id)}>Xóa đơn</Button>
+                                </div>
                             </div>
                         ))
                     ) : (
-                        <div className={cx("infoErorr", "flex")}>
-                            <BiSolidError className={cx("icon")}></BiSolidError>
-                            <h3>Không có đơn đặt phòng!</h3>
-                        </div>
+                        <p>Bạn chưa có đơn phòng nào!</p>
                     )
                 )}
             </div>
@@ -318,3 +272,7 @@ function ListBooked() {
 }
 
 export default ListBooked;
+
+
+
+

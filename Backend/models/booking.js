@@ -66,6 +66,11 @@ const mongooseSchema = new Schema({
         require: true,
         default: 'booked'
     },
+    paymentStatus: { // Thêm trạng thái thanh toán
+        type: String,
+        require: true,
+        default: 'unpaid' // Giá trị mặc định là 'unpaid'
+    },
     requests:{
         type: String, 
         // require: true,

@@ -201,7 +201,7 @@ function Home() {
                     </h5>
                     <h3 >Những tính năng tốt giành cho bạn</h3>
                     <p> TuungHeeu Homestay cung cấp cho khách hàng nhiều tính năng hữu dụng giúp cho bạn có thể dễ dàng thao tác và tương tác với
-                        Homestaye đồng thời cũng dễ dàng những dịch vụ mà TuungHeeu Homestay cung cấp.
+                        Homestay đồng thời cũng dễ dàng những dịch vụ mà TuungHeeu Homestay cung cấp.
                     </p>
                     <div className={cx("body-BestFeatures")}>
                         <Link to="/Room">

@@ -1,4 +1,4 @@
-const Booking = require("../models/booking");   
+const Booking = require("../models/booking");
 const Room = require("../models/room");
 const Receipt = require("../models/receipt");
 
@@ -8,11 +8,11 @@ const bookingController = {
         try {
             const room = await Room.findOne({ _id: roomId });
             const currentBookings = room.currentBooking || [];
-            
+
             // Kiểm tra sự có mặt của booking trong khoảng thời gian đã chọn
             for (const currentBooking of currentBookings) {
                 const isOverlapping = !((fromDate > currentBooking.fromdate && fromDate >= currentBooking.todate) ||
-                                        (toDate < currentBooking.fromdate && toDate <= currentBooking.todate));
+                    (toDate < currentBooking.fromdate && toDate <= currentBooking.todate));
                 if (isOverlapping) {
                     return false; // Phòng không có sẵn
                 }
@@ -25,7 +25,7 @@ const bookingController = {
     },
 
     // create booking
-    bookingRoom: async(req, res) => {
+    bookingRoom: async (req, res) => {
         console.log("ooooooooooooooooooooooo");
         const {
             room,
@@ -74,6 +74,7 @@ const bookingController = {
                 transactionId: '1234',
                 requests,
                 status: status || "booked",
+                paymentStatus: "unpaid",
                 imgs: room.imgs.map(img => ({ src: img.src, alt: img.alt }))
             });
 
@@ -96,7 +97,7 @@ const bookingController = {
         }
     },
 
-    checkoutBooking: async(req, res) => {
+    checkoutBooking: async (req, res) => {
         console.log("checkout booking");
         const { booking } = req.body;
         try {
@@ -131,7 +132,7 @@ const bookingController = {
     },
 
     // Get all booking of user by id
-    getBookingsUserId: async(req, res) => {
+    getBookingsUserId: async (req, res) => {
         const userid = req.params.userid;
         try {
             const bookings = await Booking.find({ userid: userid });
@@ -143,7 +144,7 @@ const bookingController = {
 
 
     // Get a booking
-    getBookingById: async(req, res) => {
+    getBookingById: async (req, res) => {
         try {
             const bookings = await Booking.find({ _id: req.params.id });
             res.send(bookings);
@@ -151,10 +152,10 @@ const bookingController = {
             return res.status(400).json({ message: error });
         }
     },
-    
+
 
     // Get all booking
-    getAllBooking: async(req, res) => {
+    getAllBooking: async (req, res) => {
         try {
             const bookings = await Booking.find({});
             return res.json(bookings);
@@ -165,7 +166,7 @@ const bookingController = {
 
 
     // Delete booking by id
-    deleteBooking: async(req, res) => {
+    deleteBooking: async (req, res) => {
         console.log("delete booking");
         try {
             const bookingitem = await Booking.findOne({ _id: req.params.id });
@@ -185,7 +186,7 @@ const bookingController = {
     },
 
     // Cancel booking
-    cancelBooking: async(req, res) => {
+    cancelBooking: async (req, res) => {
         const { bookingid, roomid } = req.body;
         console.log(bookingid, roomid);
         try {
@@ -205,7 +206,27 @@ const bookingController = {
         }
     },
 
-    confirmBooking: async(req, res) => {
+    processPayment: async (req, res) => {
+        const { bookingId, transactionId } = req.body;
+        try {
+            const booking = await Booking.findById(bookingId);
+            if (!booking) {
+                return res.status(404).json({ message: 'Không tìm thấy đặt phòng' });
+            }
+
+            // Cập nhật trạng thái thanh toán
+            booking.paymentStatus = 'paid';
+            booking.transactionId = transactionId;
+
+            await booking.save();
+
+            return res.status(200).json({ message: 'Thanh toán đã được xử lý thành công', booking });
+        } catch (error) {
+            return res.status(400).json({ message: error });
+        }
+    },
+
+    confirmBooking: async (req, res) => {
         console.log("confirm booking");
         try {
             const bookingitem = await Booking.findOne({ _id: req.params.id });
@@ -228,7 +249,12 @@ const bookingController = {
         } catch (error) {
             return res.status(400).json({ message: error });
         }
-    }
+    },
+
+
 };
 
 module.exports = bookingController;
+
+
+

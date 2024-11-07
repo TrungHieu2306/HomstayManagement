@@ -147,9 +147,11 @@
     0% {
         transform: translateY(-100%);
     }
+
     80% {
         transform: translateY(10%);
     }
+
     100% {
         transform: translateY(0);
     }
@@ -173,7 +175,7 @@
     animation: slideInWithBounce 0.3s ease-out;
 
     .iconPaymentSuccess {
-        img{
+        img {
             width: 120px;
             height: 60px;
         }
@@ -190,6 +192,11 @@
     .bodyPaymentSuccess {
         background-color: rgb(227, 242, 255);
         padding: 1rem;
+
+        .notePayment {
+            font-size: 13px;
+            padding: 4px 0 0 20px
+        }
     }
 
     .btnMakeAnotherBooking {

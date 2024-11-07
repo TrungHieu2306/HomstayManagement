@@ -206,39 +206,39 @@ function SearchHorizontal(props) {
                 <span className={cx("flex")}>
                     <h4
                         style={{
-                            color: "rgb(1 114 167)"
+                            color: "rgb(255 255 255)"
                         }}
                     >Chi nhánh 1 :</h4>
                     <h4
                         style={{
                             paddingLeft: "1.5rem",
-                            color: "rgb(232 234 246)"
+                            color: "rgb(1 114 167)"
                         }}
                     >số 14-16, đường Nguyễn Văn Linh, phường Cái Kế, quận Ninh Kiều, thành phố Cần Thơ</h4>
                 </span>
                 <span className={cx("flex")}>
                     <h4
                         style={{
-                            color: "rgb(1 114 167)"
+                            color: "rgb(255 255 255)"
                         }}
                     >Chi nhánh 2 :</h4>
                     <h4
                         style={{
                             paddingLeft: "1.5rem",
-                            color: "rgb(232 234 246)"
+                            color: "rgb(1 114 167)"
                         }}
                     >số 2-4, đường Võ Văn Kiệt, phường Hưng Phú, quận Cái Răng, thành phố Cần Thơ</h4>
                 </span>
                 <span className={cx("flex")}>
                     <h4
                         style={{
-                            color: "rgb(1 114 167)"
+                            color: "rgb(255 255 255)"
                         }}
                     >Chi nhánh 3 :</h4>
                     <h4
                         style={{
                             paddingLeft: "1.5rem",
-                            color: "rgb(232 234 246)"
+                            color: "rgb(1 114 167)"
                         }}
                     >số 6, đường Lý Tự Trọng, phường An Thới, quận Bình Thủy, thành phố Cần Thơ</h4>
                 </span>

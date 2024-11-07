@@ -133,7 +133,7 @@ function Payment({ room, fromDate, toDate, totaldays, totalamount, service }) {
         try {
             // Gửi yêu cầu cập nhật booking đến server
             await axios.post('/api/booking/bookroom', bookingWithPaypal);
-            
+
 
             // Cập nhật trạng thái thanh toán thành công
             setPaymentSuccessful(true);
@@ -148,7 +148,7 @@ function Payment({ room, fromDate, toDate, totaldays, totalamount, service }) {
         }
     };
 
-    
+
 
 
     useEffect(() => {
@@ -371,7 +371,7 @@ function Payment({ room, fromDate, toDate, totaldays, totalamount, service }) {
                             <div className={cx('paypal')}>
                                 {paymentMethod === "paypal" && paypalLoaded && (
                                     <div className={cx('paypalContainer')}>
-                                        <div id="paypal-button-container" style={{ width: 200}}></div>
+                                        <div id="paypal-button-container" style={{ width: 200 }}></div>
                                     </div>
                                 )}
 
@@ -407,22 +407,29 @@ function Payment({ room, fromDate, toDate, totaldays, totalamount, service }) {
                                 <img src="https://media.istockphoto.com/id/1451590744/vi/vec-to/ch%C3%BAc-m%E1%BB%ABng-poster-thi%E1%BB%87p-ch%C3%BAc-m%E1%BB%ABng-%C4%91%E1%BA%B9p-banner.jpg?s=612x612&w=0&k=20&c=-UcD8QB71BlQtz-_lkqc-7h4aXIU3jpbWapBpCQe734="></img>
                             </div>
                             <div className={cx("titlePaymentSuccess")}>
-                                <h2>CẢM ƠN BẠN ĐÃ ĐẶT PHÒNG</h2>
+                                <h2>Cảm ơn bạn đã đặt phòng</h2>
                             </div>
                             <div className={cx("bodyPaymentSuccess")}>
                                 <div className={cx("descPaymentSuccess")}>
                                     <p>Đơn đặt phòng của bạn đã được nhận</p>
                                     <p style={{ color: "#ef4e4e" }}>Vui lòng chờ xác nhận từ phía của Homestay</p>
                                 </div>
-                                
+
                                 <div className={cx("textGroup", 'flex')}>
-                                        <p className={cx("textName")}>Ngày đặt phòng: </p>
-                                        <p>{currentDate}</p>
-                                    </div>
-                                    <div className={cx("textGroup", 'flex')}>
-                                        <p className={cx("textName")}>Trạng thái: </p>
-                                        <p>Chờ xác nhận</p>
-                                    </div>
+                                    <p className={cx("textName")}>Ngày đặt phòng: </p>
+                                    <p>{currentDate}</p>
+                                </div>
+                                <div className={cx("textGroup", 'flex')}>
+                                    <p className={cx("textName")}>Trạng thái đặt phòng: </p>
+                                    <p>Chờ xác nhận</p>
+                                </div>
+                                <div className={cx('notePayment')}>
+                                    <ul>
+                                        <li>Thời gian Checkin và Checkout là 14:00 hôm trước và 12:00 trưa hôm sau</li>
+                                        <li>Khách hàng có thể hủy đặt phòng trong vòng 30 phút sau khi thanh toán để được hoàn tiền 100%</li>
+                                        <li>Trường hợp thanh toán bằng Paypal, quý khách muốn hủy đặt phòng vui lòng liên hệ hostline để được hoàn tiền</li>
+                                    </ul>
+                                </div>
                                 <Button className={cx("btnMakeAnotherBooking")} primary onClick={() => setPaymentSuccessful(false)}>
                                     Đặt thêm phòng khác
                                 </Button>
