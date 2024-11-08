@@ -158,3 +158,65 @@
         float: right;
     }
 }
+
+
+/* Container for all branches */
+.descBranch {
+    // background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    background: linear-gradient(135deg, #fafcff, #e5ebf5);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Individual branch item styling */
+.branchItem {
+    display: flex;
+    align-items: center;
+    padding: 0.1rem 0;
+    border-bottom: 1px solid #e0e0e0;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.branchItem:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect for the branch item */
+.branchItem:hover {
+    background-color: #f1f5f9;
+    transform: scale(1.02);
+    border-radius: 8px;
+}
+
+/* Label styling */
+.branchLabel {
+    background-color: #1e88e5;
+    color: #ffffff;
+    padding: 0.3rem 1rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    flex-shrink: 0;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Address styling */
+.branchAddress {
+    color: #1e88e5;
+    padding-left: 1.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/* Hover effect for address text */
+.branchItem:hover .branchAddress {
+    color: #0d47a1;
+    text-decoration: none;
+}

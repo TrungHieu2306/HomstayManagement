@@ -8,15 +8,7 @@ import { HiOutlineClipboardDocumentList, HiOutlineNewspaper } from 'react-icons/
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'src/components/Image';
 import { Diversity2Outlined } from '@mui/icons-material';
-// material ui
-import Box from '@mui/material/Box';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
-import StepContent from '@mui/material/StepContent';
-import Button from '@mui/material/Button';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
+
 // import ok from 
 // ---------------------------------------------------------------
 import { Link } from 'react-router-dom';
@@ -355,6 +347,8 @@ function Home() {
                 />
             </div>
         </div>
+
+
     );
 }
 

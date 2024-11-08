@@ -426,7 +426,7 @@ function Payment({ room, fromDate, toDate, totaldays, totalamount, service }) {
                                 <div className={cx('notePayment')}>
                                     <ul>
                                         <li>Thời gian Checkin và Checkout là 14:00 hôm trước và 12:00 trưa hôm sau</li>
-                                        <li>Khách hàng có thể hủy đặt phòng trong vòng 30 phút sau khi thanh toán để được hoàn tiền 100%</li>
+                                        <li>Khách hàng có thể hủy đặt phòng trong vòng 48 giờ sau khi thanh toán để không bị mất phí</li>
                                         <li>Trường hợp thanh toán bằng Paypal, quý khách muốn hủy đặt phòng vui lòng liên hệ hostline để được hoàn tiền</li>
                                     </ul>
                                 </div>
