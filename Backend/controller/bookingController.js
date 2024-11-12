@@ -171,6 +171,7 @@ const bookingController = {
         try {
             const bookingitem = await Booking.findOne({ _id: req.params.id });
             const room = await Room.findOne({ _id: bookingitem.roomid });
+
             const bookingRoom = room.currentBooking;
             if (bookingRoom.length > 0) {
                 let temp = [];
@@ -189,6 +190,7 @@ const bookingController = {
     cancelBooking: async (req, res) => {
         const { bookingid, roomid } = req.body;
         console.log(bookingid, roomid);
+
         try {
             const bookingitem = await Booking.findOne({ _id: bookingid });
             bookingitem.status = 'cancelled';

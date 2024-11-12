@@ -67,9 +67,19 @@ tbody tr:nth-child(even) {
     width: 120px;
 }
 .iconDelete{
+    margin-left: 5px;
     font-size: 23px;
     &:hover{
         color: crimson;
     }
     cursor: pointer;
 }
+
+.iconEdit{
+    font-size: 23px;
+    &:hover{
+        color: rgb(129, 199, 218);
+    }
+    cursor: pointer;
+}
+

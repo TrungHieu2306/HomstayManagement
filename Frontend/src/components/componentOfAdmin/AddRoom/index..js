@@ -175,7 +175,7 @@ function AddRoom(props) {
                     feature
                     className={cx("btn","addBtn")}
                 >
-                    Add
+                    Save
                 </Button>
           </div>
         </div>
@@ -232,7 +232,7 @@ function AddRoom(props) {
                       {...register("desc",{
                         required: {
                           value: true,
-                          message:"Trường mô tả không được trống"
+                          message:"Vui lòng nhập thông tin mô tả"
                         },
                         value:""})}
                       id="desc"
@@ -387,7 +387,7 @@ function AddRoom(props) {
                         feature 
                         onClick={addImgHandle} 
                         className={cx('btn','addBtn')}>
-                          Add
+                          Add Image
                         </Button>
                       </div>
                       { 

@@ -150,7 +150,7 @@ function UpdateRoom(props) {
                     className={cx("btn",'addBtn')}
                     round
                 >
-                    Save
+                    Update
                 </Button>
           </div>
         </div>
@@ -327,7 +327,7 @@ function UpdateRoom(props) {
                 <div className={cx("imgDiv")}>
                       <div className={cx("titleImg","flex")}>
                           <h4>Ảnh</h4>
-                        <Button feature onClick={addImgHandle} className={cx('btn','addBtn')}>Add</Button>
+                        <Button feature onClick={addImgHandle} className={cx('btn','addBtn')}>Add Image</Button>
                       </div>
                       { 
                         imgval.map((val,index)=>
