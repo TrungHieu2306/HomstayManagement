@@ -93,7 +93,7 @@ function UpdateEmployee(props) {
                     feature
                     className={cx("btn","addBtn")}
                 >
-                    Add
+                    Update
                 </Button>
           </div>
         </div>

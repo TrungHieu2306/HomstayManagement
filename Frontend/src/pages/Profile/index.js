@@ -1,8 +1,8 @@
 import classNames from "classnames/bind";
 import styles from "./Profile.module.scss"
-import {BiEdit} from "react-icons/bi"
+import { BiEdit } from "react-icons/bi"
 import Button from "src/components/Button";
-import {MdModeEditOutline} from "react-icons/md"
+import { MdModeEditOutline } from "react-icons/md"
 import Image from "src/components/Image";
 import { useEffect, useRef, useState } from "react";
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
@@ -47,25 +47,24 @@ function Profile() {
         const file = event.target.files[0];
         setFile(file);
     }
-    const handleUpload = async(e) => {
+    const handleUpload = async (e) => {
         const formdata = new FormData()
-        formdata.append('file',file);
+        formdata.append('file', file);
         try {
-            const result = (await axios.put(`/api/users/changeavatarpicture/${user._id}`,formdata)).data;
+            const result = (await axios.put(`/api/users/changeavatarpicture/${user._id}`, formdata)).data;
             localStorage.removeItem('currentUser');
-            localStorage.setItem('currentUser',JSON.stringify(result));
+            localStorage.setItem('currentUser', JSON.stringify(result));
             window.location.reload();
         } catch (error) {
             console.log(error)
         }
-        
+
     }
-//  ///////////////////////////////////////////////////////
+    //  ///////////////////////////////////////////////////////
     const editInfoHandle = () => {
         setCheck(false);
 
-        if(inputNameInfoRef.current)
-        {
+        if (inputNameInfoRef.current) {
             inputNameInfoRef.current.style.display = "block"
             inputEmailInfoRef.current.style.display = "block"
             inputPhoneInfoRef.current.style.display = "block"
@@ -95,19 +94,19 @@ function Profile() {
         pAddressInfoRef.current.style.display = "block"
         setCheck(true)
     }
-    const saveInfoHandle = async() => {
-       try {
-            const result = (await axios.put(`/api/users/updateuser/${user._id}`,{name,psw,address,phone,cccd})).data;
+    const saveInfoHandle = async () => {
+        try {
+            const result = (await axios.put(`/api/users/updateuser/${user._id}`, { name, psw, address, phone, cccd })).data;
             await Swal.fire({
                 icon: 'success',
                 title: 'Cập nhật thông tin thành công',
                 text: 'Thông tin người dùng đã được cập nhật',
             })
             localStorage.removeItem('currentUser');
-            localStorage.setItem('currentUser',JSON.stringify(result));
-       } catch (error) {
+            localStorage.setItem('currentUser', JSON.stringify(result));
+        } catch (error) {
             console.log(error)
-       }
+        }
     }
 
     return (
@@ -117,82 +116,82 @@ function Profile() {
                 <div className={cx("left")}>
                     <div className={cx("avatarInfo")} >
                         {(user.avatar) ? (
-                            <img src={`http://localhost:5000/Images/`+user.avatar} className={cx('user-avatar')} alt="img-avatar" />
-                        ) : (   
+                            <img src={`http://localhost:5000/Images/` + user.avatar} className={cx('user-avatar')} alt="img-avatar" />
+                        ) : (
                             <Image src="" className={cx('user-avatar')} alt="img-avatar" />
                         )
                         }
-                        
+
                     </div>
                     <div className={cx("nameUser")}>
                         <h3 >{user.name}</h3>
                     </div>
 
                     <div className={cx("editAvatar")} >
-                        <input 
-                                ref={inputImageRef}
-                                type="file"
-                                onChange={handleImageChange}
-                                style={{display: "none"}}
+                        <input
+                            ref={inputImageRef}
+                            type="file"
+                            onChange={handleImageChange}
+                            style={{ display: "none" }}
                         />
-                        <div onClick={handleImageClick} style={{cursor: "pointer"}}><BiEdit /></div>
-                        <Button className={cx("btn","updateBtn")} onClick={handleUpload}>
+                        <div onClick={handleImageClick} style={{ cursor: "pointer" }}><BiEdit /></div>
+                        <Button className={cx("btn", "updateBtn")} onClick={handleUpload}>
                             Upload
                         </Button>
                     </div>
 
                     <div className={cx("descUser")}>
-                        <p >Là khách hàng thân quan của DHouse Dalat</p>
+                        <p >Là khách hàng thân quan của TungHeeu Homestay</p>
                     </div>
                     <div className={cx("socialPlatform")}>
-                        <span className={cx("platform","iconFacebook","flex")}>
+                        <span className={cx("platform", "iconFacebook", "flex")}>
                             <FacebookOutlinedIcon className={cx("icon")}></FacebookOutlinedIcon>
                             <h4 >Nền tảng Facebook</h4>
                         </span>
-                        <span className={cx("platform","iconGG","flex")}>
+                        <span className={cx("platform", "iconGG", "flex")}>
                             <GoogleIcon className={cx("icon")}></GoogleIcon>
                             <h4 >Nền tảng Google</h4>
                         </span>
-                        <span className={cx("platform","iconTwitter","flex")}>
+                        {/* <span className={cx("platform", "iconTwitter", "flex")}>
                             <TwitterIcon className={cx("icon")}></TwitterIcon>
                             <h4 >Nền tảng Twitter</h4>
                         </span>
-                        <span className={cx("platform","iconInstagram","flex")}>
+                        <span className={cx("platform", "iconInstagram", "flex")}>
                             <InstagramIcon className={cx("icon")}></InstagramIcon>
                             <h4 >Nền tảng Instagram</h4>
-                        </span>
+                        </span> */}
                     </div>
                 </div>
                 <div className={cx("right")}>
-                    <div className={cx("titleInfo","flex")}>
+                    <div className={cx("titleInfo", "flex")}>
                         <h2>
-                            Thông tin các nhân {user.isAdmin? <span>(Admin)</span>:<span>(No Admin)</span>} 
+                            Thông tin cá nhân {user.isAdmin ? <span>(Admin)</span> : <span></span>}
                         </h2>
 
-                       {check ? (
-                        <Button 
-                            className={cx("btn","updateBtn")}
-                            onClick={editInfoHandle}
-                            RightIcon={<MdModeEditOutline></MdModeEditOutline>}
-                        >
-                            Edit
-                        </Button>
-                       ) : (
-                        <>
-                        <Button 
-                            onClick={cancelInfoHandle}
-                            className={cx("btn","cancelBtn")}
-                        >
-                            Cancel
-                        </Button>
-                        <Button 
-                            onClick={saveInfoHandle}
-                            className={cx("btn","addBtn")}
-                        >
-                            Save
-                        </Button>
-                        </>
-                       )
+                        {check ? (
+                            <Button
+                                className={cx("btn", "updateBtn")}
+                                onClick={editInfoHandle}
+                                RightIcon={<MdModeEditOutline></MdModeEditOutline>}
+                            >
+                                Update
+                            </Button>
+                        ) : (
+                            <>
+                                <Button
+                                    onClick={cancelInfoHandle}
+                                    className={cx("btn", "cancelBtn")}
+                                >
+                                    Cancel
+                                </Button>
+                                <Button
+                                    onClick={saveInfoHandle}
+                                    className={cx("btn", "addBtn")}
+                                >
+                                    Save
+                                </Button>
+                            </>
+                        )
                         }
                     </div>
                     <div className={cx("nameInfo")}>
@@ -202,7 +201,7 @@ function Profile() {
                             className={cx("inputGroup")}
                             type="text"
                             value={name}
-                            onChange={(e)=>{setName(e.target.value)}}
+                            onChange={(e) => { setName(e.target.value) }}
                         >
                         </input>
                         <p ref={pNameInfoRef} className={cx("pGroup")}>{name}</p>
@@ -226,7 +225,7 @@ function Profile() {
                             className={cx("inputGroup")}
                             type="password"
                             value={psw}
-                            onChange={(e)=>{setPsw(e.target.value)}}
+                            onChange={(e) => { setPsw(e.target.value) }}
                         >
                         </input>
                         <p ref={pPswInfoRef} className={cx("pGroup")}>{psw}</p>
@@ -238,7 +237,7 @@ function Profile() {
                             className={cx("inputGroup")}
                             type="number"
                             value={phone}
-                            onChange={(e)=>{setPhone(e.target.value)}}
+                            onChange={(e) => { setPhone(e.target.value) }}
                         >
                         </input>
                         <p ref={pPhoneInfoRef} className={cx("pGroup")}>{phone}</p>
@@ -250,7 +249,7 @@ function Profile() {
                             className={cx("inputGroup")}
                             type="number"
                             value={cccd}
-                            onChange={(e)=>{setCCCD(e.target.value)}}
+                            onChange={(e) => { setCCCD(e.target.value) }}
                         >
                         </input>
                         <p ref={pCCCDInfoRef} className={cx("pGroup")}> {cccd}</p>
@@ -262,12 +261,12 @@ function Profile() {
                             className={cx("inputGroup")}
                             type="text"
                             value={address}
-                            onChange={(e)=>{setAdress(e.target.value)}}
+                            onChange={(e) => { setAdress(e.target.value) }}
                         >
                         </input>
                         <p ref={pAddressInfoRef} className={cx("pGroup")}>{address}</p>
                     </div>
-                    
+
                 </div>
             </div>
         </>

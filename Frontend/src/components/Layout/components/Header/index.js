@@ -68,6 +68,9 @@ function Header() {
                     <Link to="/Contact">
                         <div className={cx('tab-item')}>Tư vấn</div>
                     </Link>
+                    <Link to="/ListBooked">
+                        <div className={cx('tab-item')}>Đơn đặt phòng</div>
+                    </Link>
                 </div>
                 {/* checked login */}
                 <div className={cx('login-register')}>

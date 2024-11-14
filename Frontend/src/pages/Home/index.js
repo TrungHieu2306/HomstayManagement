@@ -19,7 +19,7 @@ const steps = [
     {
         label: 'Đăng ký/Đăng nhập tài khoản',
         description: `Để trải nghiệm các tính năng tuyệt vời của trang web cũng như để biết
-        được những dịch vụ mà Tuung Heeu cung cấp bạn cần có 1 tài khoản để đăng nhập 
+        được những dịch vụ mà Tung Heeu cung cấp bạn cần có 1 tài khoản để đăng nhập 
         vào hệ thống.`,
     },
     {
@@ -189,11 +189,11 @@ function Home() {
                     <h5
                         style={{ color: "#0172a7" }}
                     >
-                        TuungHeeu Homestay
+                        TungHeeu Homestay
                     </h5>
                     <h3 >Những tính năng tốt giành cho bạn</h3>
-                    <p> TuungHeeu Homestay cung cấp cho khách hàng nhiều tính năng hữu dụng giúp cho bạn có thể dễ dàng thao tác và tương tác với
-                        Homestay đồng thời cũng dễ dàng những dịch vụ mà TuungHeeu Homestay cung cấp.
+                    <p> TungHeeu Homestay cung cấp cho khách hàng nhiều tính năng hữu dụng giúp cho bạn có thể dễ dàng thao tác và tương tác với
+                        Homestay đồng thời cũng dễ dàng những dịch vụ mà TungHeeu Homestay cung cấp.
                     </p>
                     <div className={cx("body-BestFeatures")}>
                         <Link to="/Room">
@@ -240,7 +240,7 @@ function Home() {
                                 </div>
                                 <div className={cx("feature-group")}>
                                     <h4>Xem tin tức</h4>
-                                    <p>Nắm bắt được tình hình những cập nhật mới TuungHeeu Homestay và bắt kịp xu hướng du lịch hiện nay</p>
+                                    <p>Nắm bắt được tình hình những cập nhật mới TungHeeu Homestay và bắt kịp xu hướng du lịch hiện nay</p>
                                 </div>
                             </div>
                         </Link>

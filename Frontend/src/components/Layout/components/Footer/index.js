@@ -43,7 +43,7 @@ function Footer() {
                             </div>
                             <div className={cx('price')}>
                                 mức giá
-                                <p className={cx('infoContact-content')}>Giá phòng từ 399.000 VND</p>
+                                <p className={cx('infoContact-content')}>Giá phòng từ 299.000 VND</p>
                             </div>
                         </div>
                         <div className={cx('infoAbout')}>

@@ -188,7 +188,7 @@ function Payment({ room, fromDate, toDate, totaldays, totalamount, service }) {
                             <AiOutlineClose className={cx("icon")} onClick={closePaymentHandle} />
                         </div>
                         <h2 className={cx('heading')}>XÁC NHẬN VÀ THANH TOÁN</h2>
-                        <p className={cx('desc')}>Tìm kiếm Homestay đơn giản với TuungHeeu</p>
+                        <p className={cx('desc')}>Tìm kiếm Homestay đơn giản với TungHeeu</p>
                         <h4 className={cx('orderDate')}>Ngày đặt phòng: <span style={{ color: "green" }}>{currentDate}</span></h4>
                         <form
                             className={cx('formPayment')}

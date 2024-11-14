@@ -71,7 +71,7 @@ function Login() {
                                 id="form-2"
                             >
                                 <h3 className={cx('heading')}>Đăng Nhập</h3>
-                                <p className={cx('desc')}>Tìm kiếm Homestay đơn giản với TuungHeeu</p>
+                                <p className={cx('desc')}>Tìm kiếm Homestay đơn giản với TungHeeu</p>
                                 <div className={cx('spacer')}></div>
                                 {/* email */}
                                 <div className={cx('form-group')}>
