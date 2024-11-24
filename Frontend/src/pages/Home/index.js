@@ -13,7 +13,7 @@ import { Diversity2Outlined } from '@mui/icons-material';
 // ---------------------------------------------------------------
 import { Link } from 'react-router-dom';
 
-const urlAdvertisiment = "https://img.freepik.com/free-photo/starry-sky-town_23-2151642624.jpg?t=st=1730045398~exp=1730048998~hmac=d74b4350b5ffe188fa32aef4908eec1fa791c00bdf7385ee43bcfad02be3f010&w=1380";
+const urlAdvertisiment = "https://img.freepik.com/free-photo/chair-sits-cabinstyle-bedroom_157027-4296.jpg?t=st=1732265044~exp=1732268644~hmac=e626c23c0032349fd7b70328a7611a202d6880057ac95fdd0532bc42f0bd48dc&w=1380";
 const cx = classNames.bind(style);
 const steps = [
     {
@@ -339,13 +339,13 @@ function Home() {
             </div> */}
 
             {/* advertisement */}
-            <div className={cx("bannerAdvertisement")}>
+            {/* <div className={cx("bannerAdvertisement")}>
                 <Image
                     className={cx("imgBannerAdv")}
                     src={urlAdvertisiment}
                     alt="bannerAdv"
                 />
-            </div>
+            </div> */}
         </div>
 
 

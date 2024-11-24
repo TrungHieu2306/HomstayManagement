@@ -93,7 +93,7 @@ function Login() {
                                 {/* password */}
                                 <div className={cx('form-group')}>
                                     <label htmlFor="password" className={cx('form-label')}>
-                                        Password
+                                        Mật khẩu
                                     </label>
                                     <input
                                         id="password"
@@ -110,7 +110,7 @@ function Login() {
                                 <span className={cx('flex')}>
                                     Nếu bạn chưa tạo tài khoản
                                     <p className={cx('directionRegister')} >
-                                        <Link to='/Register'>Đăng ký</Link>
+                                        <Link to='/Register' style={{color: 'blue'}}>Đăng ký</Link>
                                     </p>
                                 </span>
                                 <Button 

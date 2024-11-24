@@ -76,7 +76,7 @@ function AddRoomType(props) {
     return ( 
         <div className={cx("wrapper")}>
             <div className={cx("title","flex")}> 
-          <h2>Thêm Hạng Phòng</h2>
+          <h2>Thêm loại phòng</h2>
           <div className={cx("flex")}>
               <Button 
                     onClick={cancelHandle}
@@ -104,7 +104,7 @@ function AddRoomType(props) {
                 {/* 1. mã hạng phòng */}
                 <div  className={cx('form-group')}>
                   <label htmlFor="codeRoomType" className={cx('form-label')}>
-                      Mã Hạng Phòng
+                      Mã loại phòng
                   </label>
                   <input
                       {...register("codeRoomType", {
@@ -127,7 +127,7 @@ function AddRoomType(props) {
                 {/* 2. tên hạng phòng */}
                 <div  className={cx('form-group')}>
                   <label htmlFor="name" className={cx('form-label')}>
-                      Tên Hạng Phòng
+                      Tên loại phòng
                   </label>
                   <input
                       {...register("name", {

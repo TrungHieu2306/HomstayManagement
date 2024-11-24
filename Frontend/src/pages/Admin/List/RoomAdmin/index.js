@@ -91,14 +91,14 @@ function RoomAdmin() {
                 {checked===0 ? 
                   (<>
                     <div className={cx("title","flex")}> 
-                      <h2>Phòng & Hạng Phòng</h2>
+                      <h2>Phòng & Loại phòng</h2>
                       <div className={cx("flex")}>
                         <Button 
                           feature
                           className={cx("btn","updateBtn")}
                           onClick={()=>setChecked(3)}
                         >
-                          Thêm Hạng Phòng
+                          Thêm loại phòng
                         </Button>
                         <Button 
                           feature
@@ -140,7 +140,7 @@ function RoomAdmin() {
                         }}
                         onClick={()=>setChecked(4)}
                         >
-                        Hạng phòng
+                        Loại phòng
                       </div>
                     </div>
                     {loading ? <Loader/> : (
@@ -192,14 +192,14 @@ function RoomAdmin() {
                 (checked===4 ? (
                 <>
                   <div className={cx("title","flex")}> 
-                      <h2>Phòng & Hạng Phòng</h2>
+                      <h2>Phòng & Loại phòng</h2>
                       <div className={cx("flex")}>
                         <Button 
                           feature
                           className={cx("btn","updateBtn")}
                           onClick={()=>setChecked(3)}
                         >
-                          Thêm Hạng Phòng
+                          Thêm loại phòng
                         </Button>
                         <Button 
                           feature
@@ -242,7 +242,7 @@ function RoomAdmin() {
                         }}
                         onClick={()=>setChecked(4)}
                         >
-                        Hạng phòng
+                        Loại phòng
                       </div>
                     </div>
                
@@ -251,8 +251,8 @@ function RoomAdmin() {
                         <thead>
                           <tr>
                             <th>stt</th>
-                            <th>Mã hạng phòng</th>
-                            <th>Tên hạng phòng</th>
+                            <th>Mã loại phòng</th>
+                            <th>Tên loại phòng</th>
                             <th>Số lượng</th>
                             <th>Sức chứa</th>
                             <th>Giá theo giờ</th>

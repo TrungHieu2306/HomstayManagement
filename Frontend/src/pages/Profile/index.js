@@ -195,7 +195,7 @@ function Profile() {
                         }
                     </div>
                     <div className={cx("nameInfo")}>
-                        <h3>Họ Tên</h3>
+                        <h3>Họ tên</h3>
                         <input
                             ref={inputNameInfoRef}
                             className={cx("inputGroup")}
@@ -219,7 +219,7 @@ function Profile() {
                         <p ref={pEmailInfoRef} className={cx("pGroup")}>{email}</p>
                     </div>
                     <div className={cx("pswInfo")}>
-                        <h3>Mật Khẩu</h3>
+                        <h3>Mật khẩu</h3>
                         <input
                             ref={inputPswInfoRef}
                             className={cx("inputGroup")}
@@ -243,7 +243,7 @@ function Profile() {
                         <p ref={pPhoneInfoRef} className={cx("pGroup")}>{phone}</p>
                     </div>
                     <div className={cx("cccdInfo")}>
-                        <h3>Căn Cước Công Dân</h3>
+                        <h3>Căn cước công dân</h3>
                         <input
                             ref={inputCCCDInfoRef}
                             className={cx("inputGroup")}
