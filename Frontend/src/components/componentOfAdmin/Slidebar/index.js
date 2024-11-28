@@ -120,7 +120,7 @@ function Slidebar() {
                                 leftIcon={<HiLocationMarker className={cx('icon')}/>}
                                 to='/admin/sub/nearbytouristspot'
                                 >
-                                Địa điểm gần homestay
+                                Địa điểm nổi tiếng
                             </Button>
                         </div>
                         <div className={cx('listItem')}>
