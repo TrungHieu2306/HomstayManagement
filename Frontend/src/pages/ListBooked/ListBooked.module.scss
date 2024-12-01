@@ -172,23 +172,23 @@
     justify-content: flex-end
 }
 
-.actionButtons .paypal-button {
-    /* Custom styles for PayPal button */
-    background-color: #0070ba22;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 4px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
+// .actionButtons .paypal-button {
+//     /* Custom styles for PayPal button */
+//     background-color: #0070ba22;
+//     color: white;
+//     padding: 10px 20px;
+//     border-radius: 4px;
+//     text-align: center;
+//     cursor: pointer;
+//     transition: background-color 0.3s ease, transform 0.2s ease;
+// }
 
-.actionButtons .paypal-button:hover {
-    background-color: #0070ba3b;
-    transform: translateY(-2px);
-}
+// .actionButtons .paypal-button:hover {
+//     background-color: #0070ba3b;
+//     transform: translateY(-2px);
+// }
 
-.actionButtons Button:first-child {
+.actionButtons Button {
     background-color: #e63946;
     color: white;
     padding: 10px 20px;
@@ -198,15 +198,6 @@
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.actionButtons Button:last-child {
-    background-color: #9d9697;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
 
 .actionButtons Button {
     background-color: #d62828;
@@ -225,13 +216,13 @@
 }
 
 /* Additional hover effect for cancel and delete buttons */
-.actionButtons Button:first-child:hover {
+.actionButtons Button:hover {
     background-color: #b9170f; /* Different color for 'Hủy Đơn' */
 }
 
-.actionButtons Button:last-child:hover {
-    background-color: #817c7d; /* Different color for 'Xóa Đơn' */
-}
+// .actionButtons Button:last-child:hover {
+//     background-color: #817c7d; /* Different color for 'Xóa Đơn' */
+// }
 
 .large-text {
     font-size: 0.9em; /* Điều chỉnh kích thước theo mong muốn */

@@ -161,7 +161,7 @@ function AddRoom(props) {
     return (
         <>
         <div className={cx("title","flex")}> 
-          <h2>Thêm Phòng</h2>
+          <h2>Thêm phòng</h2>
           <div className={cx("flex")}>
               <Button 
                     onClick={cancelHandle}
@@ -175,7 +175,7 @@ function AddRoom(props) {
                     feature
                     className={cx("btn","addBtn")}
                 >
-                    Save
+                    Add
                 </Button>
           </div>
         </div>
@@ -189,7 +189,7 @@ function AddRoom(props) {
             {/* 1. title name */}
               <div  className={cx('form-group')}>
                   <label htmlFor="name" className={cx('form-label')}>
-                      Tên Phòng
+                      Tên phòng
                   </label>
                   <input
                       {...register("name", {
@@ -226,7 +226,7 @@ function AddRoom(props) {
             {/* 3. desc */}
               <div className={cx('form-group')}>
                   <label htmlFor="desc" className={cx('form-label')}>
-                      Mô tả
+                      Mô tả phòng
                   </label>
                   <input
                       {...register("desc",{
@@ -249,7 +249,7 @@ function AddRoom(props) {
             {/* 4. convinent */}
               <Sheet  sx={{ width: "80%", marginBottom: 2}}>
                 <Typography id="rank" level="body-sm" fontWeight="lg" sx={{ mb: 1.5, fontSize: 15, color: '#333' }}>
-                  Tiện Nghi
+                  Tiện nghi
                 </Typography>
                 <div role="group" aria-labelledby="rank">
                   <List
@@ -382,7 +382,7 @@ function AddRoom(props) {
             {/* 8. image */}
                 <div className={cx("imgDiv")}>
                       <div className={cx("titleImg","flex")}>
-                         <h4>Ảnh</h4>
+                         <h4>Hình ảnh</h4>
                        <Button 
                         feature 
                         onClick={addImgHandle} 

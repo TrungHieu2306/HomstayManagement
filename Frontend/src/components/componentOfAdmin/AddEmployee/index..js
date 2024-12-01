@@ -147,7 +147,7 @@ function AddEmployee(props) {
               {/* 2. cmnd  */}
               <div  className={cx('form-group')}>
                   <label htmlFor="cmnd" className={cx('form-label')}>
-                      Số CMND
+                      Căn cước công dân
                   </label>
                   <input
                       {...register("cmnd", {

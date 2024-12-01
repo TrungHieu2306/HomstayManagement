@@ -99,7 +99,7 @@ function Employee() {
           {checked === 0 ?
             (<>
               <div className={cx("title", "flex")}>
-                <h2>Nhân viên & Bảng tính lương</h2>
+                <h2>Quản lý nhân viên</h2>
                 <div className={cx("flex")}>
                   <Button
                     feature
@@ -160,6 +160,7 @@ function Employee() {
                         <th>Tên Nhân viên</th>
                         <th>Chi nhánh</th>
                         <th>Giới tính</th>
+                        <th>CCCD</th>
                         <th>Số điện thoại</th>
                         <th>Địa chỉ</th>
                         <th>Công việc</th>
@@ -179,6 +180,7 @@ function Employee() {
                                   <span>Khác</span>
                                 ))}
                             </td>
+                            <td>{text.cmnd}</td>
                             <td>{text.phone}</td>
                             <td>{text.address}</td>
                             <td>{text.position[0].name}</td>

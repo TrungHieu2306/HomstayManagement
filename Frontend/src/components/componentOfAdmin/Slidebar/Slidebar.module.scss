@@ -1,4 +1,4 @@
-.inner{
+.inner {
     display: flex;
     z-index: 10;
     align-items: center;
@@ -7,7 +7,8 @@
     flex-direction: column;
     width: 20%;
     height: 100%;
-    .heading{
+
+    .heading {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -16,20 +17,24 @@
         background-color: #fff;
         border-bottom: 1px solid #c1c1c1;
         width: 100%;
-        h2{
+
+        h2 {
             cursor: pointer;
         }
     }
-    .drawer{
+
+    .drawer {
         color: black;
         width: 100%;
-        .titleDrawer{
+
+        .titleDrawer {
             padding: 1rem 0 0 1rem;
         }
-        .list{
 
-            .listItem{
-                .btnDrawer{
+        .list {
+
+            .listItem {
+                .btnDrawer {
                     font-size: 13px;
                     font-weight: 500;
                     width: 100%;
@@ -38,38 +43,45 @@
         }
     }
 }
-.titleDrawer{
+
+.titleDrawer {
     font-size: 12px;
     font-weight: bold;
-    color:#6439ff;
- //    color: #7d7d7d;
+    color: #6439ff;
+    //    color: #7d7d7d;
     margin-top: 10px;
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
     text-transform: uppercase;
- }
- .icon{
-     color: #6439ff;
-     font-size: 18px;
- }
- .bottom{
-     display: flex;
-     align-items: center;
-     margin: 10px;
-     .colorOption{
-         width: 20px;
-         height: 20px;
-         border-radius: 5px;
-         border: 1px solid #7451f8;
-         cursor: pointer; 
-         margin: 5px;
-         &:nth-child(1){
-             background-color: whitesmoke;
-         }
-         &:nth-child(2){
-             background-color: #333;
-         }
-         &:nth-child(3){
-             background-color: darkblue;   
-         }
-     }
- }
+}
+
+.icon {
+    color: #6439ff;
+    font-size: 18px;
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+
+    .colorOption {
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        border: 1px solid #7451f8;
+        cursor: pointer;
+        margin: 5px;
+
+        &:nth-child(1) {
+            background-color: whitesmoke;
+        }
+
+        &:nth-child(2) {
+            background-color: #333;
+        }
+
+        &:nth-child(3) {
+            background-color: darkblue;
+        }
+    }
+}

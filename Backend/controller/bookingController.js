@@ -24,7 +24,7 @@ const bookingController = {
         }
     },
 
-    // create booking
+//     create booking
     bookingRoom: async (req, res) => {
         console.log("ooooooooooooooooooooooo");
         const {

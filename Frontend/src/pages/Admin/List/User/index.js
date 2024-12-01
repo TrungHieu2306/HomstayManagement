@@ -49,7 +49,7 @@ function User() {
             <div className={cx("right")}>
                 <Header></Header> 
                 <div className={cx("title","flex")}> 
-                  <h2>User</h2>
+                  <h2>Quản lý khách hàng</h2>
                   {/* <Button feature className={cx("btn","updateBtn")}>Cập nhật</Button> */}
                 </div>
                 {loading ? <Loader/> : (
@@ -58,11 +58,11 @@ function User() {
                     <thead>
                       <tr>
                         <th>stt</th>
-                        {/* <th>id</th> */}
-                        <th>name</th>
+                        {/* <th>Hình ảnh</th> */}
+                        <th>Tên khách hàng</th>
                         <th>email</th>
-                        <th>phone</th>
-                        <th>address</th>
+                        <th>Số điện thoại</th>
+                        <th>Địa chỉ</th>
                         <th>is admin</th>
                         <th>action</th>
                       </tr>
@@ -72,7 +72,7 @@ function User() {
                         user.map((text,index)=>(
                         <tr key={index}>
                           <td>{index+1}</td>
-                          {/* <td>{text._id}</td> */}
+                          {/* <td>{text.avatar}</td> */}
                           <td>{text.name}</td>
                           <td>{text.email}</td>
                           <td>{text.phone}</td>

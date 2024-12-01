@@ -12,21 +12,21 @@ import Loader from "src/components/Loader";
 import UpdateRoomType from "src/components/componentOfAdmin/UpdateRoomType";
 import axios from "axios";
 import Swal from "sweetalert2";
-import {MdDelete,MdAdd} from "react-icons/md";
-import {GrAdd} from "react-icons/gr";
-import {BiSolidEditAlt} from 'react-icons/bi'
+import { MdDelete, MdAdd } from "react-icons/md";
+import { GrAdd } from "react-icons/gr";
+import { BiSolidEditAlt } from 'react-icons/bi'
 import AddRoomType from "src/components/componentOfAdmin/AddRoomType";
 // -------------------
 const cx = classNames.bind(style);
 function RoomAdmin() {
-  const {data,loading} = useFetch('/api/rooms/getallrooms');
+  const { data, loading } = useFetch('/api/rooms/getallrooms');
   const [room, setRoom] = useState([]);
   const [roomtype, setRoomtype] = useState([]);
   const [checked, setChecked] = useState(0);
   const [roomupdatechoosed, setRoomUpdateChoosed] = useState("");
   const [roomtypeupdatechoosed, setRoomtypeUpdateChoosed] = useState("");
-  useEffect(()=>{
-    const fecthData = async() => {
+  useEffect(() => {
+    const fecthData = async () => {
       try {
         const result = (await axios.get('/api/roomtype/getallroomtype')).data;
         setRoomtype(result)
@@ -35,16 +35,16 @@ function RoomAdmin() {
       }
     }
     fecthData();
-  },[])
-  useEffect(()=>{
+  }, [])
+  useEffect(() => {
     try {
       setRoom(data)
     } catch (error) {
       console.log(error)
     }
-  },[data])
+  }, [data])
   // delete room by id
-  const deleteRoomHandle = async(roomid) => {
+  const deleteRoomHandle = async (roomid) => {
     try {
       const deleteRoom = (await axios.delete(`/api/rooms/deleteroombyid/${roomid}`))
       await Swal.fire({
@@ -67,7 +67,7 @@ function RoomAdmin() {
     setRoomtypeUpdateChoosed(roomtypeval);
     setChecked(5);
   }
-  const deleteRoomTypeHandle = async(roomtypeid) => {
+  const deleteRoomTypeHandle = async (roomtypeid) => {
     try {
       const deleteRoomtype = (await axios.delete(`/api/roomtype/deleteroomtypebyid/${roomtypeid}`))
       await Swal.fire({
@@ -82,248 +82,248 @@ function RoomAdmin() {
       console.log(error);
     }
   }
-    return (
+  return (
     <div className={cx('wrapper')}>
-        <div className={cx('inner')}>
-            <Slidebar></Slidebar>
-            <div className={cx("right")}>
-                <Header></Header>
-                {checked===0 ? 
-                  (<>
-                    <div className={cx("title","flex")}> 
-                      <h2>Phòng & Loại phòng</h2>
-                      <div className={cx("flex")}>
-                        <Button 
-                          feature
-                          className={cx("btn","updateBtn")}
-                          onClick={()=>setChecked(3)}
-                        >
-                          Thêm loại phòng
-                        </Button>
-                        <Button 
-                          feature
-                          className={cx("btn","updateBtn")}
-                          onClick={()=>setChecked(1)}
-                        >
-                          Thêm Phòng
-                        </Button>
-                      </div>
-                    </div>
-                    <div className="flex">
-                      <div 
-                        style={{
-                            boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
-                            fontWeight: "bold",
-                            color: "#fff",
-                            padding: "8px",
-                            backgroundColor:"#0090da", 
-                            width: "150px",
-                            cursor: "pointer",
-                            margin: "1rem 0 0 2rem",
-                            borderRadius: "5px 5px 0 0"
-                        }} 
-                        onClick={()=>setChecked(0)}
-                        >
-                        Danh sách phòng
-                      </div>
-                      <div 
-                        style={{
-                            boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
-                            fontWeight: "bold",
-                            color: "#1f1f29",
-                            padding: "8px",
-                            backgroundColor:"#ddd", 
-                            width: "120px",
-                            cursor: "pointer",
-                            margin: "1rem 0 0 2rem",
-                            borderRadius: "5px 5px 0 0"
-                        }}
-                        onClick={()=>setChecked(4)}
-                        >
-                        Loại phòng
-                      </div>
-                    </div>
-                    {loading ? <Loader/> : (
-                    <div className={cx("tableDiv")}>
-                      <table >
-                        <thead>
-                          <tr>
-                            <th>stt</th>
-                            <th>Tên phòng</th>
-                            <th>Chi nhánh</th>
-                            <th>Diện tích</th>
-                            <th>Giá</th>
-                            <th>Sức chứa</th>
-                            <th>Hạng Phòng</th>
-                            <th>action</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                        {room.length ?(
-                            room.map((text,index)=>(
-                            <tr key={index}>
-                              <td>{index+1}</td>
-                              <td>{text.name}</td>
-                              <td>{text.branch}</td>
-                              <td>{text.acreage}</td>
-                              <td>{text.price[1]}</td>
-                              <td>{text.maxcount}</td>
-                              <td>{text.type}</td>
-                              <td style={{textAlign:"center"}}>
-                                <BiSolidEditAlt
-                                  onClick={()=>{updateRoomHandle(text)}}
-                                  className={cx("iconEdit")}
-                                    >
-                                </BiSolidEditAlt>
-                                <MdDelete 
-                                  className={cx("iconDelete")}
-                                  onClick={()=>{deleteRoomHandle(text._id)}}
-                                >
-                                </MdDelete>
-                              </td>
+      <div className={cx('inner')}>
+        <Slidebar></Slidebar>
+        <div className={cx("right")}>
+          <Header></Header>
+          {checked === 0 ?
+            (<>
+              <div className={cx("title", "flex")}>
+                <h2>Quản lý phòng và loại phòng</h2>
+                <div className={cx("flex")}>
+                  <Button
+                    feature
+                    className={cx("btn", "updateBtn")}
+                    onClick={() => setChecked(3)}
+                  >
+                    Thêm loại phòng
+                  </Button>
+                  <Button
+                    feature
+                    className={cx("btn", "updateBtn")}
+                    onClick={() => setChecked(1)}
+                  >
+                    Thêm phòng
+                  </Button>
+                </div>
+              </div>
+              <div className="flex">
+                <div
+                  style={{
+                    boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
+                    fontWeight: "bold",
+                    color: "#fff",
+                    padding: "8px",
+                    backgroundColor: "#0090da",
+                    width: "150px",
+                    cursor: "pointer",
+                    margin: "1rem 0 0 2rem",
+                    borderRadius: "5px 5px 0 0"
+                  }}
+                  onClick={() => setChecked(0)}
+                >
+                  Danh sách phòng
+                </div>
+                <div
+                  style={{
+                    boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
+                    fontWeight: "bold",
+                    color: "#1f1f29",
+                    padding: "8px",
+                    backgroundColor: "#ddd",
+                    width: "120px",
+                    cursor: "pointer",
+                    margin: "1rem 0 0 2rem",
+                    borderRadius: "5px 5px 0 0"
+                  }}
+                  onClick={() => setChecked(4)}
+                >
+                  Loại phòng
+                </div>
+              </div>
+              {loading ? <Loader /> : (
+                <div className={cx("tableDiv")}>
+                  <table >
+                    <thead>
+                      <tr>
+                        <th>stt</th>
+                        <th>Tên phòng</th>
+                        <th>Chi nhánh</th>
+                        <th>Diện tích</th>
+                        <th>Giá</th>
+                        <th>Sức chứa</th>
+                        <th>Loại Phòng</th>
+                        <th>action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {room.length ? (
+                        room.map((text, index) => (
+                          <tr key={index}>
+                            <td>{index + 1}</td>
+                            <td>{text.name}</td>
+                            <td>{text.branch}</td>
+                            <td>{text.acreage}</td>
+                            <td>{text.price[1]}</td>
+                            <td>{text.maxcount}</td>
+                            <td>{text.type}</td>
+                            <td style={{ textAlign: "center" }}>
+                              <BiSolidEditAlt
+                                onClick={() => { updateRoomHandle(text) }}
+                                className={cx("iconEdit")}
+                              >
+                              </BiSolidEditAlt>
+                              <MdDelete
+                                className={cx("iconDelete")}
+                                onClick={() => { deleteRoomHandle(text._id) }}
+                              >
+                              </MdDelete>
+                            </td>
 
-                            </tr>))
-                            ):null
-                          }
-                        </tbody>
-                      </table>
-                    </div>  )}
-                  </>) : 
-                (checked===4 ? (
-                <>
-                  <div className={cx("title","flex")}> 
-                      <h2>Phòng & Loại phòng</h2>
-                      <div className={cx("flex")}>
-                        <Button 
-                          feature
-                          className={cx("btn","updateBtn")}
-                          onClick={()=>setChecked(3)}
-                        >
-                          Thêm loại phòng
-                        </Button>
-                        <Button 
-                          feature
-                          className={cx("btn","updateBtn")}
-                          onClick={()=>setChecked(1)}
-                        >
-                          Thêm Phòng
-                        </Button>
-                      </div>
-                    </div>
-                    <div className="flex">
-                      <div 
-                        style={{
-                            boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
-                            fontWeight: "bold",
-                            padding: "8px",
-                            width: "150px",
-                            cursor: "pointer",
-                            backgroundColor:"#ddd", 
-                            color: "#1f1f29",
-                            margin: "1rem 0 0 2rem",
-                            borderRadius: "5px 5px 0 0"
-                        }} 
-                        onClick={()=>setChecked(0)}
-                        >
-                        Danh sách phòng
-                      </div>
-                      <div 
-                        style={{
-                            boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
-                            fontWeight: "bold",
-                            padding: "8px",
-                            backgroundColor:"#0090da", 
-                            color: "#fff",
+                          </tr>))
+                      ) : null
+                      }
+                    </tbody>
+                  </table>
+                </div>)}
+            </>) :
+            (checked === 4 ? (
+              <>
+                <div className={cx("title", "flex")}>
+                  <h2>Quản lý phòng và loại phòng</h2>
+                  <div className={cx("flex")}>
+                    <Button
+                      feature
+                      className={cx("btn", "updateBtn")}
+                      onClick={() => setChecked(3)}
+                    >
+                      Thêm loại phòng
+                    </Button>
+                    <Button
+                      feature
+                      className={cx("btn", "updateBtn")}
+                      onClick={() => setChecked(1)}
+                    >
+                      Thêm phòng
+                    </Button>
+                  </div>
+                </div>
+                <div className="flex">
+                  <div
+                    style={{
+                      boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
+                      fontWeight: "bold",
+                      padding: "8px",
+                      width: "150px",
+                      cursor: "pointer",
+                      backgroundColor: "#ddd",
+                      color: "#1f1f29",
+                      margin: "1rem 0 0 2rem",
+                      borderRadius: "5px 5px 0 0"
+                    }}
+                    onClick={() => setChecked(0)}
+                  >
+                    Danh sách phòng
+                  </div>
+                  <div
+                    style={{
+                      boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
+                      fontWeight: "bold",
+                      padding: "8px",
+                      backgroundColor: "#0090da",
+                      color: "#fff",
 
-                            width: "120px",
-                            cursor: "pointer",
-                            margin: "1rem 0 0 2rem",
-                            borderRadius: "5px 5px 0 0"
-                        }}
-                        onClick={()=>setChecked(4)}
-                        >
-                        Loại phòng
-                      </div>
-                    </div>
-               
-                    <div className={cx("tableDiv")}>
-                      <table >
-                        <thead>
-                          <tr>
-                            <th>stt</th>
-                            <th>Mã loại phòng</th>
-                            <th>Tên loại phòng</th>
-                            <th>Số lượng</th>
-                            <th>Sức chứa</th>
-                            <th>Giá theo giờ</th>
-                            <th>Giá theo ngày</th>
-                            <th>Giá theo đêm</th>
-                            <th>action</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                        {roomtype.length ?(
-                            roomtype.map((text,index)=>(
-                            <tr key={index}>
-                              <td>{index+1}</td>
-                              <td>{text.codeRoomType}</td>
-                              <td>{text.name}</td>
-                              <td>{text.quantity}</td>
-                              <td>{text.maxcount}</td>
-                              <td>{text.price[0]}</td>
-                              <td>{text.price[1]}</td>
-                              <td>{text.price[2]}</td>
-                              <td style={{textAlign:"center"}}>
-                                <BiSolidEditAlt
-                                  onClick={()=>{updateRoomTypeHandle(text)}}
-                                  className={cx("iconEdit")}
-                                    >
-                                </BiSolidEditAlt>
-                                <MdDelete 
-                                  className={cx("iconDelete")}
-                                  onClick={()=>{deleteRoomTypeHandle(text._id)}}
-                                >
-                                </MdDelete>
-                              </td>
+                      width: "120px",
+                      cursor: "pointer",
+                      margin: "1rem 0 0 2rem",
+                      borderRadius: "5px 5px 0 0"
+                    }}
+                    onClick={() => setChecked(4)}
+                  >
+                    Loại phòng
+                  </div>
+                </div>
 
-                            </tr>))
-                            ):null
-                          }
-                        </tbody>
-                      </table>
-                    </div>
-                </>) :
-                (checked===1 ? 
-                  (<AddRoom 
-                      sendData={(data)=>setChecked(data)}
-                      sendAllRoom={(ok)=>{if (ok.data) setRoom(ok.data)}}
-                      roomtype={roomtype}
-                    />) :
-                (checked===2 ? 
+                <div className={cx("tableDiv")}>
+                  <table >
+                    <thead>
+                      <tr>
+                        <th>stt</th>
+                        <th>Tên loại phòng</th>
+                        <th>Mô tả phòng</th>
+                        <th>Số lượng</th>
+                        <th>Sức chứa</th>
+                        <th>Giá theo giờ</th>
+                        <th>Giá theo ngày</th>
+                        <th>Giá theo đêm</th>
+                        <th>action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {roomtype.length ? (
+                        roomtype.map((text, index) => (
+                          <tr key={index}>
+                            <td>{index + 1}</td>
+                            <td>{text.codeRoomType}</td>
+                            <td>{text.name}</td>
+                            <td>{text.quantity}</td>
+                            <td>{text.maxcount}</td>
+                            <td>{text.price[0]}</td>
+                            <td>{text.price[1]}</td>
+                            <td>{text.price[2]}</td>
+                            <td style={{ textAlign: "center" }}>
+                              <BiSolidEditAlt
+                                onClick={() => { updateRoomTypeHandle(text) }}
+                                className={cx("iconEdit")}
+                              >
+                              </BiSolidEditAlt>
+                              <MdDelete
+                                className={cx("iconDelete")}
+                                onClick={() => { deleteRoomTypeHandle(text._id) }}
+                              >
+                              </MdDelete>
+                            </td>
+
+                          </tr>))
+                      ) : null
+                      }
+                    </tbody>
+                  </table>
+                </div>
+              </>) :
+              (checked === 1 ?
+                (<AddRoom
+                  sendData={(data) => setChecked(data)}
+                  sendAllRoom={(ok) => { if (ok.data) setRoom(ok.data) }}
+                  roomtype={roomtype}
+                />) :
+                (checked === 2 ?
                   (<UpdateRoom
-                      cancelUpdate={(data)=>setChecked(data)}
-                      sendAllRoom={(ok)=>{if (ok.data) setRoom(ok.data)}}
-                      roomdetail={roomupdatechoosed}
-                      roomtype={roomtype}
-                    />) :
-                (checked===3 ? (
-                  <AddRoomType
-                    sendData={(data)=>setChecked(data)}
-                    sendAllRoomType={(ok)=>{console.log(ok)}}
-                  />
-                ) :
-                (checked===5 ? (
-                  <UpdateRoomType
-                    roomtypedetail={roomtypeupdatechoosed}
-                    sendData={(data)=>setChecked(data)}
-                    sendAllRoomType={(ok)=>{if (ok) setRoomtype(ok)}}
-                  />
-                ) : (<></>)
-                )))))}
-            </div>
+                    cancelUpdate={(data) => setChecked(data)}
+                    sendAllRoom={(ok) => { if (ok.data) setRoom(ok.data) }}
+                    roomdetail={roomupdatechoosed}
+                    roomtype={roomtype}
+                  />) :
+                  (checked === 3 ? (
+                    <AddRoomType
+                      sendData={(data) => setChecked(data)}
+                      sendAllRoomType={(ok) => { console.log(ok) }}
+                    />
+                  ) :
+                    (checked === 5 ? (
+                      <UpdateRoomType
+                        roomtypedetail={roomtypeupdatechoosed}
+                        sendData={(data) => setChecked(data)}
+                        sendAllRoomType={(ok) => { if (ok) setRoomtype(ok) }}
+                      />
+                    ) : (<></>)
+                    )))))}
         </div>
+      </div>
     </div>
-    )
+  )
 }
 
 export default RoomAdmin;

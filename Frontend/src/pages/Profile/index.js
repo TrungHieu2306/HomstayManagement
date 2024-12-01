@@ -218,7 +218,7 @@ function Profile() {
                         </input>
                         <p ref={pEmailInfoRef} className={cx("pGroup")}>{email}</p>
                     </div>
-                    <div className={cx("pswInfo")}>
+                    {/* <div className={cx("pswInfo")}>
                         <h3>Mật khẩu</h3>
                         <input
                             ref={inputPswInfoRef}
@@ -229,7 +229,21 @@ function Profile() {
                         >
                         </input>
                         <p ref={pPswInfoRef} className={cx("pGroup")}>{psw}</p>
+                    </div> */}
+                    <div className={cx("pswInfo")}>
+                        <h3>Mật khẩu</h3>
+                        <input
+                            ref={inputPswInfoRef}
+                            className={cx("inputGroup")}
+                            type="password"
+                            value={psw}
+                            onChange={(e) => { setPsw(e.target.value); }}
+                        />
+                        <p ref={pPswInfoRef} className={cx("pGroup")}>
+                            {psw.replace(/./g, "•")}
+                        </p>
                     </div>
+
                     <div className={cx("phoneInfo")}>
                         <h3>Số điện thoại</h3>
                         <input

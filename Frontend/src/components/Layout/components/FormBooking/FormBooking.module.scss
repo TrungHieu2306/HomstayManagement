@@ -22,25 +22,26 @@
     // align-items: center;
     z-index: 101;
     background-color: rgb(255, 255, 255);
-    height: 560px;
-    width: 75%;
+    height: 580px;
+    width: 85%;
     padding: 2rem;
 }
 
 .left {
-    width: 65%;
+    width: 40%;
     border-right: 1px solid #cecece;
 
     // height: 100%;
     // height: 550px;
     .imgRoom {
-        height: 400px;
+        height: 300px;
 
         .img {
-            height: 390px;
+            height: 260px;
             width: 100%;
             // height: 60vh;
             overflow: hidden;
+            margin-top: 2rem;
         }
     }
 
@@ -52,6 +53,11 @@
     padding-right:4rem;
 }
 
+.titlePayment{
+    border-top: 1px solid #cecece;
+    padding-top: 3rem;
+}
+
 .right {
 
     // width: 50%;
@@ -59,11 +65,15 @@
         max-height: 87%;
         overflow-y: auto;
         padding-left: 2rem;
-
-        .titleForm {}
-
         line-height: 3.5rem;
-
+        display: flex;
+        .bodyleft{
+            padding-right: 4rem;
+            width: 380px;
+        }
+        .bodyright{
+            max-width: 350px;
+        }
     }
 }
 
@@ -76,16 +86,35 @@
 
 .totalamount {
     color: #f83d3d;
+    background-color: #f83d3d1f;
 }
 
-h3 {
+h2, h3 {
     color: var(--sub);
+}
+
+h3{
+    color: var(--sub);
+}
+
+.titlenote{
+    font-style: italic;
+    font-size: 1.2rem;
 }
 
 .btnPayment {
     // margin-bottom: 50px;
     margin: 6px;
+    justify-content: end;
+    .addBtnmoney{
+        border-radius: 5px;
+    }
 }
+
+.totalDate{
+    margin-top: 3px;
+}
+
 
 .closeBtn {
     height: 20px;
@@ -102,11 +131,18 @@ h3 {
     }
 }
 
+.servicesList{
+    p{
+        margin-bottom: 1rem;
+    }
+}
+
 .btnservicesList {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-bottom: 1rem;
 }
 
 .removeBtn {
@@ -132,4 +168,9 @@ h3 {
     border: 1px solid #ccc;
     padding: 4px;
     cursor: pointer;
+}
+
+.colortext{
+    color: black;
+    font-weight: bold;
 }

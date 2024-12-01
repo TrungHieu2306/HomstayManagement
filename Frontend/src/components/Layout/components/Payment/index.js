@@ -203,10 +203,10 @@ function Payment({ room, fromDate, toDate, totaldays, totalamount, service }) {
                                         <label className={cx('form-label')}>Phòng:&#160;</label>
                                         <h4 className={cx('roomname')}>{room.name}</h4>
                                     </div>
-                                    <div className={cx("headFormDiv", 'flex')}>
+                                    {/* <div className={cx("headFormDiv", 'flex')}>
                                         <label className={cx('form-label')}>Loại phòng:&#160;</label>
                                         <h4>{room.type}</h4>
-                                    </div>
+                                    </div> */}
                                     {/* Name User */}
                                     <div className={cx('form-group')}>
                                         <label htmlFor="NameUser" className={cx('form-label')}>
@@ -258,10 +258,10 @@ function Payment({ room, fromDate, toDate, totaldays, totalamount, service }) {
                                 </div>
                                 {/* right */}
                                 <div className={cx("right")}>
-                                    <div className={cx("headFormDiv", 'flex')}>
+                                    {/* <div className={cx("headFormDiv", 'flex')}>
                                         <label className={cx('form-label')}>Giá phòng:&#160;</label>
                                         <h4>{formatter.format(room.price[1])} </h4>
-                                    </div>
+                                    </div> */}
                                     <div className={cx("headFormDiv", 'flex')}>
                                         <label className={cx('form-label')}>Tổng thanh toán:&#160;</label>
                                         <h4 style={{ color: "#e64a19" }}>  {formatter.format(totalamount)} </h4>
@@ -407,11 +407,10 @@ function Payment({ room, fromDate, toDate, totaldays, totalamount, service }) {
                                 <img src="https://media.istockphoto.com/id/1451590744/vi/vec-to/ch%C3%BAc-m%E1%BB%ABng-poster-thi%E1%BB%87p-ch%C3%BAc-m%E1%BB%ABng-%C4%91%E1%BA%B9p-banner.jpg?s=612x612&w=0&k=20&c=-UcD8QB71BlQtz-_lkqc-7h4aXIU3jpbWapBpCQe734="></img>
                             </div>
                             <div className={cx("titlePaymentSuccess")}>
-                                <h2>Cảm ơn bạn đã đặt phòng</h2>
+                                <h2>ĐẶT PHÒNG THÀNH CÔNG</h2>
                             </div>
                             <div className={cx("bodyPaymentSuccess")}>
                                 <div className={cx("descPaymentSuccess")}>
-                                    <p>Đơn đặt phòng của bạn đã được nhận</p>
                                     <p style={{ color: "#ef4e4e" }}>Vui lòng chờ xác nhận từ phía của Homestay</p>
                                 </div>
 
@@ -443,3 +442,8 @@ function Payment({ room, fromDate, toDate, totaldays, totalamount, service }) {
 }
 
 export default Payment;
+
+
+
+
+

@@ -115,7 +115,7 @@ function Branch() {
             <div className={cx("right")}>
                 <Header></Header>
                   <div className={cx("title","flex")}> 
-                    <h2>Các chi nhánh</h2>
+                    <h2>Quản lý chi nhánh</h2>
                   </div>
                   {loading ? <Loader/> : (
                   <div className={cx("containerDiv","flex")}>
@@ -126,10 +126,10 @@ function Branch() {
                           <thead>
                             <tr>
                               <th>stt</th>
-                              <th>id</th>
-                              <th>branch</th>
-                              <th>name</th>
-                              <th>address</th>
+                              {/* <th>id chi nhánh</th> */}
+                              <th>Chi nhánh</th>
+                              <th>Tên</th>
+                              <th>Địa chỉ chi nhánh</th>
                               <th>action</th>
                             </tr>
                           </thead>
@@ -138,7 +138,7 @@ function Branch() {
                               branch.map((text,index)=>(
                               <tr key={index}>
                                 <td>{index+1}</td>
-                                <td>{text._id}</td>
+                                {/* <td>{text._id}</td> */}
                                 <td>{text.branch}</td>
                                 <td>{text.name}</td>
                                 <td>{text.address}</td>
@@ -160,7 +160,7 @@ function Branch() {
                       </div>
                       <div className={cx("tableDiv1")}>
                         {/* table1 */}
-                        <table className={cx("table1")}>
+                        {/* <table className={cx("table1")}>
                           <thead >
                             <tr >
                               <th className={cx("green")}>stt</th>
@@ -197,7 +197,7 @@ function Branch() {
                               ):null
                             }
                           </tbody>
-                        </table>
+                        </table> */}
                       </div>
                     </div>
                     <div className={cx("feature")}>
@@ -205,6 +205,7 @@ function Branch() {
                       <form onSubmit={handleSubmit(onSubmit)} className={cx("form")}>
                           {/* 1. title name */}
                             <div className={cx('form-group')}>
+                                <h3>THÊM CHI NHÁNH</h3>
                                 <label htmlFor="name" className={cx('form-label')}>
                                     Tên chi nhánh
                                 </label>
@@ -232,7 +233,7 @@ function Branch() {
                           {/* 3. branch */}
                           <div className={cx('form-group')}>
                                     <label htmlFor="branch" className={cx('form-label')}>
-                                        Chi nhánh
+                                        Chi nhánh số
                                     </label>
                                     <input
                                         {...register("branch",{required: true,min: 1,value:1, valueAsNumber: true})}
@@ -264,7 +265,7 @@ function Branch() {
                           className={cx("formUpdate")}
                         > 
                             {/* 1. title name */}
-                            <h3 style={{paddingBottom: "1rem",textTransform:"uppercase"}}>Cập nhật địa điểm</h3>
+                            <h3 style={{paddingBottom: "1rem",textTransform:"uppercase"}}>Cập nhật chi nhánh</h3>
                             <div className={cx('form-group')}>
                                 <label htmlFor="name" className={cx('form-label')}>
                                     Tên chi nhánh
